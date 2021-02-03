@@ -1,0 +1,400 @@
+*,
+html {
+    outline: none !important;
+}
+
+.top-form {
+    position: relative;
+    float: right;
+}
+
+.top-form.top-form-minicart {
+    cursor: pointer;
+    position: relative;
+}
+
+.top-form.top-form-minicart .top-minicart-icon {
+    padding: 0 7px;
+    position: relative;
+    margin-top: -130%;
+}
+
+.top-form.top-form-minicart .top-minicart-icon i:before {
+    content: "";
+    background: url("../images/icons/icon.png") no-repeat;
+    background-position: 0px -42px;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+}
+
+.top-form.top-form-minicart .top-minicart-icon i {
+    height: 38px;
+    width: 38px;
+    padding: 10px;
+    border: 1px solid #a2c6f7;
+    background-color: #a2c6f7;
+    border-radius: 50%;
+}
+
+.top-form.top-form-minicart .top-minicart-icon i:hover {
+    border-color: #ffaa00;
+    background-color: #ffaa00;
+}
+
+.top-form.top-form-minicart .top-minicart-icon a {
+    font-family: PoppinsRegular;
+    font-size: 13px;
+    color: #fff;
+    background-color: #5ab5b7;
+    border-radius: 100%;
+    height: 23px;
+    width: 23px;
+    display: inline-block;
+    line-height: 28px;
+    text-align: center;
+    position: absolute;
+    top: -8px;
+    right: -5px;
+}
+
+.rtl .top-form.top-form-minicart .top-minicart-icon a {
+    right: auto;
+    left: -5px;
+}
+
+.top-form .wrapp-minicart {
+    opacity: 0;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -o-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+    background: none repeat scroll 0 0 #fff;
+    position: absolute;
+    right: 0;
+    left: auto;
+    top: 34px;
+    width: 330px;
+    z-index: 9999;
+    box-shadow: 0px 3px 5px 2px rgba(0, 0, 0, 0.255);
+    padding: 20px 20px 31px;
+}
+
+.rtl .top-form .wrapp-minicart {
+    left: 0;
+    right: auto;
+}
+
+.top-form .wrapp-minicart h2 {
+    color: #455460;
+    text-transform: none;
+    font-size: 14px;
+    margin: 0 0 7px;
+}
+
+.top-form .wrapp-minicart .minicart-padding {
+    background: #fff;
+}
+
+.top-form .wrapp-minicart .minicart-padding .number-item {
+    font-family: PoppinsRegular;
+    font-size: 13px;
+    color: #7d7d7d;
+    padding-top: 6px;
+}
+
+.top-form .wrapp-minicart .minicart-padding .number-item span {
+    color: #ffaa00;
+}
+
+.top-form .wrapp-minicart .minicart-padding ul.minicart-content {
+    max-height: 295px;
+    overflow: auto;
+    margin-bottom: 7px;
+    margin-left: 0;
+}
+
+.top-form .wrapp-minicart .minicart-padding ul.minicart-content li {
+    list-style: none;
+    position: relative;
+    padding: 5px 0;
+    overflow: hidden;
+}
+
+.top-form .wrapp-minicart .minicart-padding ul.minicart-content li .product-image {
+    display: inline-block;
+    margin: 0 20px 0 0;
+    width: 90px;
+}
+
+.rtl .top-form .wrapp-minicart .minicart-padding ul.minicart-content li .product-image {
+    float: right;
+    margin: 0 0 0 20px;
+}
+
+.top-form .wrapp-minicart .minicart-padding ul.minicart-content li .product-image:hover img {
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+}
+
+.top-form .wrapp-minicart .minicart-padding ul.minicart-content li .detail-item {
+    overflow: hidden;
+}
+
+.top-form .wrapp-minicart .minicart-padding ul.minicart-content li .detail-item .product-details {
+    position: relative;
+    padding: 0 30px 0 0;
+}
+
+.rtl .top-form .wrapp-minicart .minicart-padding ul.minicart-content li .detail-item .product-details {
+    padding: 0 0 0 30px;
+}
+
+.top-form .wrapp-minicart .minicart-padding ul.minicart-content li .detail-item .product-details h4 {
+    margin: 0 0 3px;
+}
+
+.top-form .wrapp-minicart .minicart-padding ul.minicart-content li .detail-item .product-details h4 a {
+    font-family: PoppinsRegular;
+    font-size: 13px;
+    text-transform: capitalize;
+    color: #464646;
+    line-height: 22px;
+}
+
+.top-form .wrapp-minicart .minicart-padding ul.minicart-content li .detail-item .product-details h4 a:hover {
+    color: #ffaa00;
+}
+
+.top-form .wrapp-minicart .minicart-padding ul.minicart-content li .detail-item .product-details .rating-container {
+    margin-bottom: 2px;
+}
+
+.top-form .wrapp-minicart .minicart-padding ul.minicart-content li .detail-item .product-details .product-price .price {
+    margin-bottom: 13px;
+    display: block;
+}
+
+.top-form .wrapp-minicart .minicart-padding ul.minicart-content li .detail-item .product-details .product-price .qty {
+    border: 1px solid #ebebeb;
+    margin: 0;
+    width: 58px;
+    padding: 1px 10px 0;
+    text-align: center;
+}
+
+.top-form .wrapp-minicart .minicart-padding ul.minicart-content li .detail-item .product-details .product-price .qty .qty-number {
+    font-family: PoppinsRegular;
+    font-size: 16px;
+    color: #323232;
+}
+
+.top-form .wrapp-minicart .minicart-padding ul.minicart-content li .detail-item .product-details .product-action {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    left: auto;
+}
+
+.rtl .top-form .wrapp-minicart .minicart-padding ul.minicart-content li .detail-item .product-details .product-action {
+    left: 10px;
+    right: auto;
+}
+
+.top-form .wrapp-minicart .minicart-padding ul.minicart-content li .detail-item .product-details .product-action a {
+    display: block;
+}
+
+.top-form .wrapp-minicart .minicart-padding ul.minicart-content li .detail-item .product-details .product-action a span {
+    font-size: 16px;
+    color: #999999;
+    display: block;
+}
+
+.top-form .wrapp-minicart .minicart-padding ul.minicart-content li .detail-item .product-details .product-action a span:hover {
+    color: #ffaa00;
+}
+
+.top-form .wrapp-minicart .minicart-padding ul.minicart-content li .detail-item .product-details .product-action a.btn-remove {
+    margin-bottom: 13px;
+}
+
+.top-form .wrapp-minicart .minicart-padding ul.minicart-content li .detail-item .product-details .product-action a.btn-edit span {
+    font-size: 14px;
+}
+
+.top-form .wrapp-minicart .minicart-padding ul.minicart-content li:first-child {
+    padding-top: 23px;
+}
+
+.top-form .wrapp-minicart .minicart-padding .cart-checkout {
+    line-height: normal;
+}
+
+.top-form .wrapp-minicart .minicart-padding .cart-checkout .price-total {
+    margin: 13px 0 26px;
+}
+
+.top-form .wrapp-minicart .minicart-padding .cart-checkout .price-total .label-price-total {
+    font-family: RobotoBold;
+    font-size: 14px;
+    color: #222222;
+    text-transform: uppercase;
+    margin-top: 7px;
+    display: inline-block;
+}
+
+.top-form .wrapp-minicart .minicart-padding .cart-checkout .price-total .price-total-w {
+    float: right;
+}
+
+.rtl .top-form .wrapp-minicart .minicart-padding .cart-checkout .price-total .price-total-w {
+    float: left;
+}
+
+.top-form .wrapp-minicart .minicart-padding .cart-checkout .price-total .price-total-w span.price span.amount {
+    font-size: 18px;
+    font-family: PoppinsSemiBold;
+    color: #000000;
+}
+
+.top-form .wrapp-minicart .minicart-padding .cart-checkout .cart-links {
+    margin: 0 -15px;
+}
+
+.top-form .wrapp-minicart .minicart-padding .cart-checkout .cart-links .cart-link,
+.top-form .wrapp-minicart .minicart-padding .cart-checkout .cart-links .checkout-link {
+    width: 50%;
+    text-align: center;
+    float: left;
+    padding: 0 15px;
+}
+
+.rtl .top-form .wrapp-minicart .minicart-padding .cart-checkout .cart-links .cart-link,
+.rtl .top-form .wrapp-minicart .minicart-padding .cart-checkout .cart-links .checkout-link {
+    float: right;
+}
+
+.top-form .wrapp-minicart .minicart-padding .cart-checkout .cart-links .cart-link a,
+.top-form .wrapp-minicart .minicart-padding .cart-checkout .cart-links .checkout-link a {
+    font-family: RobotoBold;
+    font-size: 14px;
+    color: #222222;
+    text-transform: uppercase;
+    padding: 11.5px 0;
+    display: block;
+    border: 1px solid #e8e8e8;
+}
+
+.top-form .wrapp-minicart .minicart-padding .cart-checkout .cart-links .cart-link:hover a,
+.top-form .wrapp-minicart .minicart-padding .cart-checkout .cart-links .checkout-link:hover a {
+    background: #ffaa00;
+    border-color: #ffaa00;
+    color: #fff;
+}
+
+.top-form:hover .wrapp-minicart {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+    margin-top: -120%;
+}
+
+
+/*  */
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video,
+hr {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}

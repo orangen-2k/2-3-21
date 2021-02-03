@@ -1,0 +1,70 @@
+
+ul {
+	list-style: none;
+}
+.section-about {
+	margin-top: 20px;
+	margin-bottom: 25px;
+}
+
+			.section-about .photo-profile img {
+				display: block;
+				width: 100%;
+				box-shadow: 0 0 5px rgba(0,0,0,.4);
+			}
+
+	.section-about .download-resume {
+		margin-bottom: 25px;
+		padding: 17px 5px;
+		text-align: center;
+		box-shadow: 0 0 5px rgba(0,0,0,.4);
+		transition: all .3s;
+	}
+
+		.section-about .download-resume:hover {
+			box-shadow: 0 0 8px rgba(0,0,0,.30),0 0 12px rgba(0,0,0,.20);
+		}
+
+		.section-about .text-download {
+			padding-left: 8px;
+		}
+
+	.section-about .available {
+		text-align: center;
+	}
+
+	.section-about h3 {
+		padding-bottom: 20px;
+	}
+
+	.section-about p {
+		padding-bottom: 27px;
+	}
+
+	.section-about .li-info {
+		padding-bottom: 10px;
+	}
+
+		.section-about .title-info {
+			display: inline-block;
+			width: 80px;
+		}
+
+
+	.section-about .ul-social-links {
+		margin-top: 10px;
+	}
+
+		.section-about .li-social-links {
+			display: inline-block;
+			margin: 0 5px 12px;
+		}
+
+			.section-about .li-social-links a {
+				display: inline-block;
+				width: 34px;
+				height: 34px;
+				line-height: 34px;
+				text-align: center;
+				transition: all .2s;
+			}
