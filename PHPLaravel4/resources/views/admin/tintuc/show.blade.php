@@ -17,7 +17,7 @@
                                     </div>
                                 </div>
                             </form>
-                            <table id="myTable"  class="table table-striped- table-bordered table-hover table-checkable dataTable dtr-inline">
+                            <table class="table m-table m-table--head-bg-success">
                                 <thead>
                                 @if(session('Notification'))
                                     <div class="alert alert-success">
@@ -31,32 +31,42 @@
                                     </span>
                                 </a><br/><br/>
                                 <tr align="center">
-                                    <th>ID</th>
+                                    <th>#</th>
                                     <th>Thể loại</th>
                                     <th>Loại tin</th>
                                     <th>Tiêu đề</th>
-                                    <th>Tóm tắt</th>
-                                    <th>Nội dung</th>
-                                    <th>Hình ảnh</th>
                                     <th>Nổi bật</th>
                                     <th>Lượt xem</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
                                 <tbody align="center">
+                                <script>
+                                    function onLoadAvatar(e){
+                                        let name = e.getAttribute('data-name');
+                                        e.setAttribute('src', "https://ui-avatars.com/api/?name=" + name + "&background=random");
+                                    }
+                                </script>
+                                @php
+                                    use Illuminate\Support\Facades\Auth;
+                                    $i = 1;
+                                    function displayAvatar($avatarImg, $name)
+                                    {
+                                    if($avatarImg != null) {
+                                        return asset('storage/' . $avatarImg);
+                                    }
+                                        // return asset('images/avatar-default.png');
+                                        return 'https://ui-avatars.com/api/?name=' . $name . '&background=random';
+                                    }
+                                @endphp
                                 @foreach ($News as $item)
                                     <tr>
-                                        <td>{{$item->id}}</td>
+                                        <td scope="row">{{$i++}}</td>
                                         <td>{{$item->loaitin->theloai->ten}}</td>
                                         <td>{{$item->loaitin->ten}}</td>
                                         <td>{{$item->tieude}}</td>
-                                        <td>{{$item->tomtat}}</td>
-                                        <td>{{$item->noidung}}</td>
                                         <td>
-                                            <img width="100px" src="{!! asset('image/'.$item->hinh) !!}" />
-                                        </td>
-                                        <td>
-                                            @if($item->noibat == 0)
+                                            @if($item->noibat == 1)
                                                 {{'Không'}}
                                             @else
                                                 {{'Có'}}
@@ -66,10 +76,10 @@
                                         <td>
                                             {{--                                            <a target="_blank" href="sua/{{$item->id}}" class="btn btn-outline-dark m-btn m-btn--icon m-btn--icon-only m-btn--pill m-btn--air">--}}
                                             <a href="{{route('update.news',['id'=>$item])}}" class="btn btn-outline-dark m-btn m-btn--icon m-btn--icon-only m-btn--pill m-btn--air" data-toggle="m-tooltip"  data-original-title="Sửa">
-                                                <i class="fa fa-pen-alt"></i>
+                                                <i class="fa fa-pen-alt" style="color: #35cc3a;"></i>
                                             </a>
                                             <a href="{{route('delete.news',['id'=>$item])}}" class="btn btn-outline-dark m-btn m-btn--icon m-btn--icon-only m-btn--pill m-btn--air" data-toggle="m-tooltip"  data-original-title="Xóa ">
-                                                <i class="far fa-trash-alt"></i>
+                                                <i class="far fa-trash-alt" style="color: #ea0c0c;"></i>
                                             </a>
                                         </td>
                                     </tr>

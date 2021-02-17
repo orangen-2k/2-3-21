@@ -26,6 +26,6 @@ class CommentController extends Controller
         $comment->iduser = Auth::user()->id;
         $comment->noidung = $request->Noidung;
         $comment->save();
-        return redirect()->route('home')->with('Notification','viet thanh cong');
+        return redirect()->route('detail.home',['id'=>$tintuc->id,'tinkhongdau'=>$tintuc->tieudekhongdau]);
     }
 }

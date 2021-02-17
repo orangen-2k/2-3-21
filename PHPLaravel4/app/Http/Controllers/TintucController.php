@@ -14,7 +14,6 @@ class TintucController extends Controller
     //
     public function getshow(Request $request){
         if($request->keyword){
-
             $news = Tintuc::where(
                 'tieude', 'like', "%".$request->keyword."%"
             )->paginate(10);

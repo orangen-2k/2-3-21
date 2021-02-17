@@ -10,10 +10,10 @@
                                 <h2 class="widgettitle">Hỗ trợ</h2>
                                 <div class="hethong_ks">
                                     <div class="hethong_ks_in">
-                                        <div class="page_fb">
-                                            <div class="fb-page" data-href="https://www.facebook.com/a25hotel/" data-width="341" data-small-header="false" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="false"></div>
-                                            <div id="fb-root"></div>
-                                        </div>
+                                        <div class="fb-page" data-href="https://www.facebook.com/fcode.community/"
+                                            data-width="341" data-small-header="false"
+                                            data-adapt-container-width="false" data-hide-cover="false"
+                                            data-show-facepile="false"></div>
                                     </div>
                                 </div>
                             </div>
@@ -42,11 +42,15 @@
 
                                     <div class="shop-social">
                                         <ul>
-                                            <li><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li><a href="https://www.facebook.com/"><i
+                                                        class="fab fa-facebook-f"></i></a></li>
                                             <li><a href="https://twitter.com/"><i class="fab fa-twitter"></i></a></li>
-                                            <li><a href="https://plus.google.com/"><i class="fab fa-google-plus-g"></i></a></li>
-                                            <li><a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a></li>
-                                            <li><a href="https://www.pinterest.com/"><i class="fab fa-pinterest-p"></i></a></li>
+                                            <li><a href="https://plus.google.com/"><i
+                                                        class="fab fa-google-plus-g"></i></a></li>
+                                            <li><a href="https://www.linkedin.com/"><i
+                                                        class="fab fa-linkedin-in"></i></a></li>
+                                            <li><a href="https://www.pinterest.com/"><i
+                                                        class="fab fa-pinterest-p"></i></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -66,11 +70,13 @@
 
                                     <div class="info-newsletter">
 
-                                        <p>Nhận tất cả các giao dịch, bán hàng và ưu đãi tốt nhất từ cửa hàng mua sắm trực tuyến tốt nhất ở UAE. Đăng ký ngay !</p>
+                                        <p>Nhận tất cả các giao dịch, bán hàng và ưu đãi tốt nhất từ cửa hàng mua sắm
+                                            trực tuyến tốt nhất ở UAE. Đăng ký ngay !</p>
 
                                         <div class="mc4wp-form">
                                             <div class="newsletter-content">
-                                                <input type="email" class="newsletter-email" name="EMAIL" placeholder="Email của bạn" required="" />
+                                                <input type="email" class="newsletter-email" name="EMAIL"
+                                                    placeholder="Email của bạn" required="" />
                                                 <input class="newsletter-submit" type="submit" value="Gửi" />
                                             </div>
                                         </div>
@@ -92,7 +98,7 @@
                 </div>
             </div>
         </div>
-        <br/>
+        <br />
 
     </div>
 
@@ -100,7 +106,8 @@
         <div class="container">
             <!-- Copyright text -->
             <div class="copyright-text pull-left">
-                <p>Sản phẩm được tìm kiếm và chọn lọc bởi <a href="http://www.smartaddons.com/">Nguyễn Quyết Chiến</a>.</p>
+                <p>Sản phẩm được tìm kiếm và chọn lọc bởi <a href="http://www.smartaddons.com/">Nguyễn Quyết Chiến</a>.
+                </p>
             </div>
 
             <div class="sidebar-copyright pull-right">
@@ -121,4 +128,3 @@
 </footer>
 
 <a id="etrostore-totop" href="#"></a>
-

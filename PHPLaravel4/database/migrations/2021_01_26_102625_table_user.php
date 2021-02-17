@@ -15,11 +15,18 @@ class TableUser extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('username');
             $table->string('name');
+            $table->string('avatar')->nullable();
             $table->string('email')->unique();
-            $table->integer('level');
             $table->string('password');
-            $table->string('number');
+            $table->string('phoneNumber');
+            $table->string('birthYear')->nullable();
+            $table->string('province')->nullable();
+            $table->string('summary')->nullable();
+            $table->string('streetInformation')->nullable();
+            $table->integer('active')->nullable();
+            $table->integer('level');
             $table->integer('comment_id')->nullable();
             $table->timestamps();
         });

@@ -81,42 +81,14 @@ class DatabaseSeeder extends Seeder
             ['id'=>3,'ten'=>'13', 'hinh'=>'sl3.jpg', 'noidung'=>'Hay3', 'link'=>'13'],
         ]);
         DB::table('users')->insert([
-            ['id'=>1,'name'=>'chien', 'email'=>'chien@gmail.com', 'password'=>bcrypt('chien@123ne'),
-                'number'=>'0963328520', 'level'=>'1', 'comment_id'=>'1'],
-            ['id'=>2,'name'=>'chien2', 'email'=>'chien2@gmail.com', 'password'=>bcrypt('chien@123ne'), 'number'=>'0963328520'
-                , 'level'=>'2', 'comment_id'=>'1'],
-            ['id'=>3,'name'=>'chien', 'email'=>'chien1@gmail.com', 'password'=>bcrypt('123'), 'number'=>'0963328520'
-                , 'level'=>'1', 'comment_id'=>'1'],
-            ['id'=>4,'name'=>'chien2', 'email'=>'chien12@gmail.com', 'password'=>bcrypt('123'), 'number'=>'0963328520'
-                , 'level'=>'2', 'comment_id'=>'1'],
-            ['id'=>5,'name'=>'chien', 'email'=>'chien222@gmail.com', 'password'=>bcrypt('123'), 'number'=>'0963328520'
-                , 'level'=>'1', 'comment_id'=>'1'],
-            ['id'=>6,'name'=>'chien2', 'email'=>'chien22@gmail.com', 'password'=>bcrypt('123'), 'number'=>'0963328520'
-                , 'level'=>'2', 'comment_id'=>'1'],
-            ['id'=>7,'name'=>'chien', 'email'=>'chien3@gmail.com', 'password'=>bcrypt('123'), 'number'=>'0963328520'
-                , 'level'=>'1', 'comment_id'=>'1'],
-            ['id'=>8,'name'=>'chien2', 'email'=>'chien32@gmail.com', 'password'=>bcrypt('123'), 'number'=>'0963328520'
-                , 'level'=>'2', 'comment_id'=>'1'],
-            ['id'=>9,'name'=>'chien', 'email'=>'chien4@gmail.com', 'password'=>bcrypt('123'), 'number'=>'0963328520'
-                , 'level'=>'1', 'comment_id'=>'1'],
-            ['id'=>10,'name'=>'chien2', 'email'=>'chien42@gmail.com', 'password'=>bcrypt('123'), 'number'=>'0963328520'
-                , 'level'=>'2', 'comment_id'=>'1'],
-            ['id'=>11,'name'=>'chien', 'email'=>'chien5@gmail.com', 'password'=>bcrypt('123'), 'number'=>'0963328520'
-                , 'level'=>'1', 'comment_id'=>'1'],
-            ['id'=>12,'name'=>'chien2', 'email'=>'chien52@gmail.com', 'password'=>bcrypt('123'), 'number'=>'0963328520'
-                , 'level'=>'2', 'comment_id'=>'1'],
-            ['id'=>13,'name'=>'chien', 'email'=>'chien6@gmail.com', 'password'=>bcrypt('123'), 'number'=>'0963328520'
-                , 'level'=>'1', 'comment_id'=>'1'],
-            ['id'=>14,'name'=>'chien2', 'email'=>'chien62@gmail.com', 'password'=>bcrypt('123'), 'number'=>'0963328520'
-                , 'level'=>'2', 'comment_id'=>'1'],
-            ['id'=>15,'name'=>'chien', 'email'=>'chien7@gmail.com', 'password'=>bcrypt('123'), 'number'=>'0963328520'
-                , 'level'=>'1', 'comment_id'=>'1'],
-            ['id'=>16,'name'=>'chien2', 'email'=>'chien72@gmail.com', 'password'=>bcrypt('123'), 'number'=>'0963328520'
-                , 'level'=>'2', 'comment_id'=>'1'],
-            ['id'=>17,'name'=>'chien', 'email'=>'chien8@gmail.com', 'password'=>bcrypt('123'), 'number'=>'0963328520'
-                , 'level'=>'1', 'comment_id'=>'1'],
-            ['id'=>18,'name'=>'chien2', 'email'=>'chien82@gmail.com', 'password'=>bcrypt('123'), 'number'=>'0963328520'
-                , 'level'=>'2', 'comment_id'=>'1'],
+            ['id'=>1,'username'=>'Nguyễn Quyết', 'name'=>'Chiến', 'avatar'=>'111.jpg', 'email'=>'chien@gmail.com',
+                'password'=>bcrypt('chien@123'), 'phoneNumber'=>'0963328520', 'birthYear'=>'11/10/2000',
+                'active'=>'1', 'streetInformation'=>'Thôn 7, Trung Châu, Đan Phượng', 'province'=>'Hà Nội',
+                'summary'=>'Thích đọc truyện, xem phim, ăn, ngủ :3', 'level'=>'1', 'comment_id'=>'1'],
+            ['id'=>2,'username'=>'Trần Việt', 'name'=>'Chinh', 'avatar'=>'11.jpg', 'email'=>'chinh@gmail.com',
+                'password'=>bcrypt('chinh@123'), 'phoneNumber'=>'0963328520', 'birthYear'=>'11/10/2000',
+                'active'=>'1', 'streetInformation'=>'Thôn 10, Trung Châu, Đan Phượng', 'province'=>'Hà Nội',
+                'summary'=>'Thích đọc truyện, xem phim, ăn, ngủ :3', 'level'=>'0', 'comment_id'=>'1'],
         ]);
     }
 }

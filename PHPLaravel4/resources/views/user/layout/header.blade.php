@@ -114,7 +114,7 @@
         </div>
     </div>
 
-    <div class="header-bottom clearfix">
+    <div class="header-bottom clearfix" style="height: 60px;top: 0px;left: 0px;right: 0px;">
         <div class="container">
             <div class="rows">
                 <!-- Primary navbar -->

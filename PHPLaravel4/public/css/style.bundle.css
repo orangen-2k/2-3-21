@@ -3274,13 +3274,13 @@ fieldset:disabled a.btn {
     color: #343a40;
     background-color: transparent;
     background-image: none;
-    border-color: #343a40;
+    /*border-color: #343a40;*/
 }
 
 .btn-outline-dark:hover {
     color: #fff;
     background-color: #343a40;
-    border-color: #343a40;
+    /*border-color: #343a40;*/
 }
 
 .btn-outline-dark:focus,
@@ -28105,7 +28105,7 @@ button:focus {
         height: calc(100% - 2.2rem);
     }
     .m-portlet.m-portlet--full-height .m-portlet__body {
-        height: calc(100% - 2.2rem - 2.2rem);
+        /*height: calc(100% - 2.2rem - 2.2rem);*/
     }
     .m-portlet.m-portlet--half-height {
         height: calc(50% - 2.2rem);
@@ -32663,7 +32663,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-checkbox.m-checkbox--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -32718,7 +32718,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-checkbox.m-checkbox--brand.m-checkbox--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -32772,7 +32772,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-checkbox.m-checkbox--metal.m-checkbox--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -32826,7 +32826,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-checkbox.m-checkbox--light.m-checkbox--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -32880,7 +32880,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-checkbox.m-checkbox--accent.m-checkbox--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -32934,7 +32934,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-checkbox.m-checkbox--focus.m-checkbox--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -32988,7 +32988,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-checkbox.m-checkbox--primary.m-checkbox--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -33042,7 +33042,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-checkbox.m-checkbox--success.m-checkbox--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -33096,7 +33096,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-checkbox.m-checkbox--info.m-checkbox--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -33150,7 +33150,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-checkbox.m-checkbox--warning.m-checkbox--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -33204,7 +33204,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-checkbox.m-checkbox--danger.m-checkbox--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -33270,7 +33270,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-radio.m-radio--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -33327,7 +33327,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-radio.m-radio--brand.m-radio--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -33383,7 +33383,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-radio.m-radio--metal.m-radio--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -33439,7 +33439,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-radio.m-radio--light.m-radio--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -33495,7 +33495,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-radio.m-radio--accent.m-radio--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -33551,7 +33551,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-radio.m-radio--focus.m-radio--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -33607,7 +33607,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-radio.m-radio--primary.m-radio--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -33663,7 +33663,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-radio.m-radio--success.m-radio--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -33719,7 +33719,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-radio.m-radio--info.m-radio--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -33775,7 +33775,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-radio.m-radio--warning.m-radio--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -33831,7 +33831,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-radio.m-radio--danger.m-radio--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -33897,7 +33897,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-checkbox.m-checkbox--skin-dark.m-checkbox--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -33952,7 +33952,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-checkbox.m-checkbox--skin-dark.m-checkbox--brand.m-checkbox--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -34006,7 +34006,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-checkbox.m-checkbox--skin-dark.m-checkbox--metal.m-checkbox--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -34060,7 +34060,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-checkbox.m-checkbox--skin-dark.m-checkbox--light.m-checkbox--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -34114,7 +34114,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-checkbox.m-checkbox--skin-dark.m-checkbox--accent.m-checkbox--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -34168,7 +34168,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-checkbox.m-checkbox--skin-dark.m-checkbox--focus.m-checkbox--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -34222,7 +34222,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-checkbox.m-checkbox--skin-dark.m-checkbox--primary.m-checkbox--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -34276,7 +34276,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-checkbox.m-checkbox--skin-dark.m-checkbox--success.m-checkbox--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -34330,7 +34330,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-checkbox.m-checkbox--skin-dark.m-checkbox--info.m-checkbox--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -34384,7 +34384,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-checkbox.m-checkbox--skin-dark.m-checkbox--warning.m-checkbox--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -34438,7 +34438,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-checkbox.m-checkbox--skin-dark.m-checkbox--danger.m-checkbox--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -34504,7 +34504,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-radio.m-radio--skin-dark.m-radio--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -34561,7 +34561,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-radio.m-radio--skin-dark.m-radio--brand.m-radio--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -34617,7 +34617,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-radio.m-radio--skin-dark.m-radio--metal.m-radio--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -34673,7 +34673,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-radio.m-radio--skin-dark.m-radio--light.m-radio--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -34729,7 +34729,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-radio.m-radio--skin-dark.m-radio--accent.m-radio--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -34785,7 +34785,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-radio.m-radio--skin-dark.m-radio--focus.m-radio--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -34841,7 +34841,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-radio.m-radio--skin-dark.m-radio--primary.m-radio--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -34897,7 +34897,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-radio.m-radio--skin-dark.m-radio--success.m-radio--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -34953,7 +34953,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-radio.m-radio--skin-dark.m-radio--info.m-radio--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -35009,7 +35009,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-radio.m-radio--skin-dark.m-radio--warning.m-radio--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -35065,7 +35065,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-radio.m-radio--skin-dark.m-radio--danger.m-radio--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -35127,7 +35127,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-checkbox.m-checkbox--state-brand.m-checkbox--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -35183,7 +35183,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-radio.m-radio--state-brand.m-radio--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -35239,7 +35239,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-checkbox.m-checkbox--state-metal.m-checkbox--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -35295,7 +35295,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-radio.m-radio--state-metal.m-radio--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -35351,7 +35351,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-checkbox.m-checkbox--state-light.m-checkbox--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -35407,7 +35407,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-radio.m-radio--state-light.m-radio--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -35463,7 +35463,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-checkbox.m-checkbox--state-accent.m-checkbox--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -35519,7 +35519,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-radio.m-radio--state-accent.m-radio--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -35575,7 +35575,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-checkbox.m-checkbox--state-focus.m-checkbox--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -35631,7 +35631,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-radio.m-radio--state-focus.m-radio--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -35687,7 +35687,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-checkbox.m-checkbox--state-primary.m-checkbox--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -35743,7 +35743,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-radio.m-radio--state-primary.m-radio--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -35799,7 +35799,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-checkbox.m-checkbox--state-success.m-checkbox--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -35855,7 +35855,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-radio.m-radio--state-success.m-radio--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -35911,7 +35911,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-checkbox.m-checkbox--state-info.m-checkbox--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -35967,7 +35967,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-radio.m-radio--state-info.m-radio--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -36023,7 +36023,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-checkbox.m-checkbox--state-warning.m-checkbox--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -36079,7 +36079,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-radio.m-radio--state-warning.m-radio--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -36135,7 +36135,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-checkbox.m-checkbox--state-danger.m-checkbox--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }
@@ -36191,7 +36191,7 @@ td>.m-checkbox.m-checkbox--single {
 .m-radio.m-radio--state-danger.m-radio--solid {
     /*
         &:hover > input:not([disabled]) ~ span {
-            background: $color-solid-bg-hover; 
+            background: $color-solid-bg-hover;
         }
         */
 }

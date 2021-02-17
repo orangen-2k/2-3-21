@@ -20,9 +20,6 @@
                                                     <div class="m-form__heading">
                                                         <h3 class="m-form__heading-title" style="font-weight: bold">
                                                             Slide
-                                                            <i data-toggle="m-tooltip" data-width="auto"
-                                                               class="m-form__heading-help-icon flaticon-info" title=""
-                                                               data-original-title="Thông tin giáo viên"></i>
                                                         </h3>
                                                     </div>
                                                 </div>

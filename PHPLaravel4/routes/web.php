@@ -84,6 +84,17 @@ Route::group(['prefix'=>'admin','middleware'=>'checklogin'],function (){
 
         Route::get('delete/{id}','UserController@getdelete')->name('delete.user');
     });
+
+    Route::group(['prefix'=>'user-update'],function (){
+        Route::get('information','UserUpdateController@getinformation')->name('user.update.information');
+        Route::post('information','UserUpdateController@postinformation')->name('user.update.information');
+        Route::get('password','UserUpdateController@getpassword')->name('user.update.password');
+        Route::post('password','UserUpdateController@postpassword')->name('user.update.password');
+        Route::get('image','UserUpdateController@getimage')->name('user.update.image');
+        Route::post('image','UserUpdateController@postimage')->name('user.update.image');
+    });
+
+
 });
 
 Route::get('user','ShowwebsiteController@gethome')->name('home');
@@ -98,17 +109,10 @@ Route::post('userhome/home','UserhomeController@postuserhome')->name('user.home'
 
 Route::get('loaitin/home/{id}/{tenkhongdau}.html','ShowwebsiteController@getloaitin')->name('loaitin.home');
 
-Route::get('check-password/home/{id}','UserhomeController@getcheckpassport')->name('check.passport');
-Route::post('check-password/home/{id}','UserhomeController@postcheckpassport')->name('check.passport');
 Route::get('update-password/home/{id}','UserhomeController@getchangepassport')->name('change.passport');
 Route::post('update-password/home/{id}','UserhomeController@postchangepassport')->name('change.passport');
 Route::get('update-information/home/{id}','UserhomeController@getchangeinfomation')->name('change.information');
 Route::post('update-information/home/{id}','UserhomeController@postchangeinfomation')->name('change.information');
 
-
-Route::get('send/mail', function (){
-    Mail::to('orangen2k@gmail.com')->send(new SendMailable());
-    return new SendMailable();
-});
 
 ?>

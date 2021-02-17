@@ -6,7 +6,6 @@
         <div class="m-portlet">
             <div class="m-portlet__body">
                 <div class="tab-content">
-
                     <div class="tab-pane active show" id="m_tabs_3_1" role="tabpanel">
                         <div class="m-portlet__body table-responsive">
                             <form action="" method="get">
@@ -18,7 +17,7 @@
                                     </div>
                                 </div>
                             </form>
-                            <table id="myTable"  class="table table-striped- table-bordered table-hover table-checkable dataTable dtr-inline">
+                            <table class="table m-table m-table--head-bg-success">
 
                                 <thead>
                                 @if(session('Notification'))
@@ -33,7 +32,8 @@
                                     </span>
                                 </a><br/><br/>
                                 <tr align="center">
-                                    <th>ID</th>
+                                    <th>#</th>
+                                    <th>Avarta</th>
                                     <th>Tên</th>
                                     <th>Email</th>
                                     <th>Số điện thoại</th>
@@ -42,26 +42,43 @@
                                 </tr>
                                 </thead>
                                 <tbody align="center">
+                                <script>
+                                    function onLoadAvatar(e){
+                                        let name = e.getAttribute('data-name');
+                                        e.setAttribute('src', "https://ui-avatars.com/api/?name=" + name + "&background=random");
+                                    }
+                                </script>
+                                @php
+                                    use Illuminate\Support\Facades\Auth;
+                                    $i = 1;
+                                    function displayAvatar($avatarImg, $name)
+                                    {
+                                    if($avatarImg != null) {
+                                        return asset('storage/' . $avatarImg);
+                                    }
+                                        return 'https://ui-avatars.com/api/?name=' . $name . '&background=random';
+                                    }
+                                @endphp
                                 @foreach ($User as $item)
                                     <tr>
-                                        <td>{{$item->id}}</td>
+                                        <td scope="row">{{$i++}}</td>
+                                        <td><img src='{{ $item->avatar ? asset('image/' .$item->avatar) : 'https://ui-avatars.com/api/?name=' . $item->name . '&background=random' }}' style="width: 50px; height: 50px" class="img-thumbnail"></td>
                                         <td>{{$item->name}}</td>
                                         <td>{{$item->email}}</td>
-                                        <td>{{$item->number}}</td>
+                                        <td>{{$item->phoneNumber}}</td>
                                         <td>
                                             @if($item->level == 1)
-                                                {{"Admin"}}
+                                                {{"Quản lý"}}
                                             @else
-                                                {{"Nguoi dung"}}
+                                                {{"Người dùng"}}
                                             @endif
                                         </td>
                                         <td>
-                                            {{--                                            <a target="_blank" href="sua/{{$item->id}}" class="btn btn-outline-dark m-btn m-btn--icon m-btn--icon-only m-btn--pill m-btn--air">--}}
                                             <a href="{{route('update.user',['id'=>$item])}}" class="btn btn-outline-dark m-btn m-btn--icon m-btn--icon-only m-btn--pill m-btn--air" data-toggle="m-tooltip"  data-original-title="Sửa">
-                                                <i class="fa fa-pen-alt"></i>
+                                                <i class="fa fa-pen-alt" style="color: #35cc3a;"></i>
                                             </a>
                                             <a href="{{route('delete.user',['id'=>$item])}}" class="btn btn-outline-dark m-btn m-btn--icon m-btn--icon-only m-btn--pill m-btn--air" data-toggle="m-tooltip"  data-original-title="Xóa ">
-                                                <i class="far fa-trash-alt"></i>
+                                                <i class="far fa-trash-alt" style="color: #ea0c0c;"></i>
                                             </a>
                                         </td>
                                     </tr>

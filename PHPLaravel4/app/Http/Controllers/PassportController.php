@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Charts\UserChart;
+use App\Loaitin;
+use App\Theloai;
 use App\Tintuc;
 use App\User;
 use Illuminate\Http\Request;
@@ -13,7 +16,47 @@ class PassportController extends Controller
     // Truyền đến màn admin.blade.php
     public function admin()
     {
-        return view('admin.admin');
+        $borderColors = [
+            "rgba(255, 99, 132, 1.0)",
+            "rgba(22,160,133, 1.0)",
+            "rgba(255, 205, 86, 1.0)",
+            "rgba(51,105,232, 1.0)",
+            "rgba(244,67,54, 1.0)",
+            "rgba(34,198,246, 1.0)",
+            "rgba(153, 102, 255, 1.0)",
+            "rgba(255, 159, 64, 1.0)",
+            "rgba(233,30,99, 1.0)",
+            "rgba(205,220,57, 1.0)"
+        ];
+        $fillColors = [
+            "rgba(255, 99, 132, 0.2)",
+            "rgba(22,160,133, 0.2)",
+            "rgba(255, 205, 86, 0.2)",
+            "rgba(51,105,232, 0.2)",
+            "rgba(244,67,54, 0.2)",
+            "rgba(34,198,246, 0.2)",
+            "rgba(153, 102, 255, 0.2)",
+            "rgba(255, 159, 64, 0.2)",
+            "rgba(233,30,99, 0.2)",
+            "rgba(205,220,57, 0.2)"
+
+        ];
+        $theloai = new Theloai();
+        $khoahoc = Loaitin::where('idtheloai',1)->count();
+        $kythuat = Loaitin::where('idtheloai',2)->count();
+        $chinhtri = Loaitin::where('idtheloai',3)->count();
+        $phapluat = Loaitin::where('idtheloai',4)->count();
+        $congnghe = Loaitin::where('idtheloai',5)->count();
+        $xahoi = Loaitin::where('idtheloai',6)->count();
+        $congdong = Loaitin::where('idtheloai',7)->count();
+        $hoctap = Loaitin::where('idtheloai',8)->count();;
+        $usersChart = new UserChart;
+        $usersChart->minimalist(true);
+        $usersChart->labels(['Khoa học','Kỹ thuật', 'Chính trị', 'Pháp luật','Công nghệ','Xã hội', 'Cộng đồng', 'Học tập']);
+        $usersChart->dataset('Users by trimester', 'bar', [$khoahoc,$kythuat, $chinhtri, $phapluat,$congnghe,$xahoi, $congdong, $hoctap])
+            ->color($borderColors)
+            ->backgroundcolor($fillColors);
+        return view('admin.chart', [ 'usersChart' => $usersChart ] );
     }
 
     // Truyền đến màn forgot.blade.php

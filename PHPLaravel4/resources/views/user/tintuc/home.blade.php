@@ -152,7 +152,7 @@
                                                 <div class="entry clearfix">
                                                     @foreach($Theloaihome as  $item)
                                                         @if(count($item->loaitin) > 0)
-                                                            <?php $data = $item->tintuc->where('noibat',1)->sortByDesc('created_at')->take(1);?>
+                                                            <?php $data = $item->tintuc->where('noibat',1)->sortByDesc('created_at')->take(2);?>
                                                             @foreach($data->all() as $tintuc)
                                                                 <div class="col-md-3">
                                                                     <div class="entry-thumb">
@@ -167,17 +167,16 @@
                                                                         <div class="content-top-in">
                                                                             <div class="entry-meta clearfix">
                                                                                 <div class="meta-entry entry-date pull-left">
-                                                                                    <i class="fa fa-calendar"></i>
-                                                                                    <span class="month-time"><a href="{{route('detail.home',['id'=>$tintuc->id,'tinkhongdau'=>$tintuc->tieudekhongdau])}}">December 16, 2016</a></span>
+                                                                                    <i class="fa fa-calendar"></i>Ngày đăng:
+                                                                                    <span class="month-time"><a href="{{route('detail.home',['id'=>$tintuc->id,'tinkhongdau'=>$tintuc->tieudekhongdau])}}">{{$tintuc->created_at}}</a></span>
                                                                                 </div>
 
                                                                                 <div class="meta-entry entry-category pull-left">
-                                                                                    <i class="fa fa-folder-open"></i>Categories : <a href="{{route('detail.home',['id'=>$tintuc->id,'tinkhongdau'=>$tintuc->tieudekhongdau])}}" rel="category">Blog</a>
+                                                                                    <i class="fa fa-folder-open"></i>Thể loại : <a href="{{route('detail.home',['id'=>$tintuc->id,'tinkhongdau'=>$tintuc->tieudekhongdau])}}" rel="category">{{$item->ten}}</a>
                                                                                 </div>
                                                                             </div>
-
                                                                             <div class="entry-title">
-                                                                                <h4><a href="{{route('detail.home',['id'=>$tintuc->id,'tinkhongdau'=>$tintuc->tieudekhongdau])}}">{{$item->ten}}</a></h4>
+                                                                                <h4><a href="{{route('detail.home',['id'=>$tintuc->id,'tinkhongdau'=>$tintuc->tieudekhongdau])}}">{{$tintuc->loaitin->ten}}</a></h4>
                                                                                 <div>
                                                                                     <div class="col-md-8">
                                                                                         <h5>{{$tintuc->tieude}}</h5>
@@ -186,38 +185,18 @@
                                                                                         <img style="width: 40px;" src="https://file4.batdongsan.com.vn/2019/06/07/20190607141654-cfb4_wm.jpg" />
                                                                                     </div>
                                                                                 </div>
-                                                                            </div>
-
-                                                                            <div class="entry-meta clearfix">
-                                                                                <div class="entry-comment meta-entry">
-                                                                                    <a href="{{route('detail.home',['id'=>$tintuc->id,'tinkhongdau'=>$tintuc->tieudekhongdau])}}">
-                                                                                        <i class="fa fa-comments"></i>6 Comments
-                                                                                    </a>
-                                                                                </div>
-
-                                                                                <div class="entry-comment meta-entry">
-                                                                                    <i class="fa fa-tags"></i>
-                                                                                    <a href="{{route('detail.home',['id'=>$tintuc->id,'tinkhongdau'=>$tintuc->tieudekhongdau])}}" rel="tag">Couples</a>,
-                                                                                    <a href="{{route('detail.home',['id'=>$tintuc->id,'tinkhongdau'=>$tintuc->tieudekhongdau])}}" rel="tag">Wedding</a>
-                                                                                </div>
-
-                                                                                <div class="entry-comment meta-entry">
-                                                                                    <i class="fas fa-eye"></i>
-                                                                                    <a href="{{route('detail.home',['id'=>$tintuc->id,'tinkhongdau'=>$tintuc->tieudekhongdau])}}" rel="tag">222</a>
-                                                                                    <a href="{{route('detail.home',['id'=>$tintuc->id,'tinkhongdau'=>$tintuc->tieudekhongdau])}}" rel="tag">view</a>
-                                                                                </div>
-                                                                            </div>
+                                                                            </div><br/><br/>
                                                                         </div>
 
                                                                         <div class="entry-summary">
-                                                                            {{$tintuc->tieude}}
+                                                                            {{$tintuc->tomtat}}
                                                                         </div>
                                                                     </div>
 
                                                                     <div class="readmore">
-                                                                        <a href="{{route('detail.home',['id'=>$tintuc->id,'tinkhongdau'=>$tintuc->tieudekhongdau])}}"><i class="fa fa-caret-right"></i>Read More</a>
+                                                                        <a href="{{route('detail.home',['id'=>$tintuc->id,'tinkhongdau'=>$tintuc->tieudekhongdau])}}"><i class="fa fa-caret-right"></i>Đọc thêm</a>
                                                                     </div>
-                                                                </div><br/><br/><br/>
+                                                                </div><br/><br/><br/><br/>
                                                             @endforeach
                                                         @endif
                                                     @endforeach

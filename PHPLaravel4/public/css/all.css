@@ -50531,7 +50531,7 @@ button:focus {
         height: calc(100% - 2.2rem);
     }
     .m-portlet.m-portlet--full-height .m-portlet__body {
-        height: calc(100% - 2.2rem - 2.2rem);
+        /* height: calc(100% - 2.2rem - 2.2rem); */
     }
     .m-portlet.m-portlet--half-height {
         height: calc(50% - 2.2rem);

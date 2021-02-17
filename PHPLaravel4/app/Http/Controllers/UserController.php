@@ -10,7 +10,6 @@ class UserController extends Controller
     //
     public function getshow(Request $request){
         if($request->keyword){
-
             $user = User::where(
                 'name', 'like', "%".$request->keyword."%"
             )->paginate(10);
@@ -28,6 +27,7 @@ class UserController extends Controller
     public function postadd(Request $request){
         $this->validate($request,
             [
+                'Hotendem'=>'required',
                 'NameND'=>'required',
                 'Email'=>'required|email|min:1|max:100|unique:users,email',
                 'Password'=>'required',
@@ -37,6 +37,7 @@ class UserController extends Controller
             ],
             [
                 'Email.required'=>'Bạn chưa nhập Email',
+                'Hotendem.required'=>'Bạn chưa nhập Email',
                 'Email.min'=>'Email phải có từ 1-100 ký tự',
                 'Email.max'=>'Email phải có từ 1-100 ký tự',
                 'Email.email'=>'Email không đúng định dạng',
@@ -50,11 +51,28 @@ class UserController extends Controller
             ]
         );
         $user = new User;
+        $user->username = "$request->Hotendem";
         $user->name = "$request->NameND";
         $user->email = $request->Email;
-        $user->number = $request->Sđt;
+        $user->phoneNumber = $request->Sđt;
         $user->level = $request->Level;
         $user->password = bcrypt($request->Password);
+        if ($request->hasFile('Hinhanh')){
+            $file = $request->file('Hinhanh');
+            $duoi = $file->getClientOriginalExtension();
+            if ($duoi != 'jpg' && $duoi != 'jpg' && $duoi != 'png' && $duoi != 'jpeg'){
+                return redirect()->route('add.news')->with('Error','Thêm  hình ảnh thất bại');
+            }
+            $name = $file->getClientOriginalName();
+            $hinhanh = quickRandom(5)."_".$name;
+            while (file_exists("image".$hinhanh)){
+                $hinhanh = quickRandom(5)."_".$name;
+            }
+            $file->move("image",$hinhanh);
+            $user->avatar = $hinhanh;
+        }else{
+            $user->avatar = "nen.jpg";
+        }
         $user->save();
         return redirect()->route('show.user')->with('Notification','Thêm người dùng '."[ $user->name ]".' thành công');
     }
@@ -79,8 +97,23 @@ class UserController extends Controller
         );
         $user = User::find($id);
         $user->name = "$request->NameND";
-        $user->number = $request->Sđt;
+        $user->username = "$request->Hotendem";
+        $user->phoneNumber = $request->Sđt;
         $user->level = $request->Level;
+        if ($request->hasFile('Hinhanh')){
+            $file = $request->file('Hinhanh');
+            $duoi = $file->getClientOriginalExtension();
+            if ($duoi != 'jpg' && $duoi != 'jpg' && $duoi != 'png' && $duoi != 'jpeg'){
+                return redirect()->route('update.news',['id'=>$id])->with('Error','Sửa  hình ảnh thất bại');
+            }
+            $name = $file->getClientOriginalName();
+            $hinhanh = quickRandom(5)."_".$name;
+            while (file_exists("image".$hinhanh)){
+                $hinhanh = quickRandom(5)."_".$name;
+            }
+            $file->move("image",$hinhanh);
+            $user->avatar = $hinhanh;
+        }
         $user->save();
         return redirect()->route('show.user')->with('Notification','Sửa tài khoản '."[ $user->email ]".' thành công');
     }

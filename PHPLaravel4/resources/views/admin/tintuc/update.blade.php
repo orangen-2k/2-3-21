@@ -2,162 +2,145 @@
 @section('title', "Sửa tin tức")
 @section('content')
     <div class="m-content">
-        <div id="preload" class="preload-container text-center" style="display: none">
-            <img id="gif-load" src="https://icon-library.com/images/loading-gif-icon/loading-gif-icon-17.jpg" alt="">
-        </div>
-        <form method="post" id="validate-form-add" action="" enctype="multipart/form-data">
-            @csrf
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="m-portlet m-portlet--full-height">
-                        <div class="m-wizard m-wizard--2 m-wizard--success m-wizard--step-first" id="m_wizard">
-                            <div class="m-wizard__form">
-                                <div class="m-form m-form--label-align-left- m-form--state-" id="m_form">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="m-portlet m-portlet--full-height">
+                    <div class="m-wizard m-wizard--2 m-wizard--success m-wizard--step-first" id="m_wizard">
+                        <div class="m-wizard__form">
+                            <div class="m-form m-form--label-align-left- m-form--state-" id="m_form">
+                                <form action="{{route('update.news',['id'=>$News])}}}" method="POST" enctype="multipart/form-data">
+                                    <input type="hidden" name="_token" value="{{csrf_token()}}" />
+                                    @csrf
                                     <div class="m-portlet__body">
-                                        <div class=" m-wizard__form-step--current" id="m_wizard_form_step_1">
+                                        @if(count($errors) > 0)
+                                            <div class="alert alert-danger">
+                                                @foreach($errors->all() as $err)
+                                                    {{$err}}<br />
+                                                @endforeach
+                                            </div>
+                                        @endif
+                                        @if(session('Notification'))
+                                            <div class="alert alert-success">
+                                                {{session('Notification')}}
+                                            </div>
+                                        @endif
+                                        <div class="m-wizard__form-step--current" id="m_wizard_form_step_1">
                                             <div class="row">
-                                                <div class="col-md-12">
+                                                <div class="col-md-12 mt-4">
                                                     <div class="m-form__heading">
                                                         <h3 class="m-form__heading-title" style="font-weight: bold">
-{{--                                                            Tin tức : <h4>{{$News->tieude}}</h4>--}}
+                                                            Tin tức: <a style="color: #ff0000;">{{$News->tieude}}</a>
                                                         </h3>
                                                     </div>
                                                 </div>
                                                 <div class="col-xl-6">
                                                     <div class="m-form__section m-form__section--first">
-                                                        @if(count($errors) > 0)
-                                                            <div class="alert alert-danger">
-                                                                @foreach($errors->all() as $err)
-                                                                    {{$err}}<br/>
-                                                                @endforeach
+                                                        <div class="form-group m-form__group row">
+                                                            <label class="col-xl-3 col-lg-3 col-form-label"><span
+                                                                    class="text-danger">*</span> Hình ảnh: </label>
+                                                            <div class="col-xl-9 col-lg-9">
+                                                                <input type="file" name="Hinhanh" class="form-control m-input name-field"
+                                                                       placeholder="Điền tiêu đề" />
                                                             </div>
-                                                        @endif
-                                                        @if(session('Notification'))
-                                                            <div class="alert alert-success">
-                                                                {{session('Notification')}}
+                                                        </div>
+                                                        <div class="form-group m-form__group row">
+                                                            <label class="col-xl-3 col-lg-3 col-form-label"><span
+                                                                    class="text-danger">*</span>Thể loại:</label>
+                                                            <div class="col-xl-9 col-lg-9">
+                                                                <select class="form-control select2" name="Theloai" id="Theloaiid">
+                                                                    <option value="" selected>Chọn</option>
+                                                                    @foreach ($Category as $item)
+                                                                        <option
+                                                                            @if($News->loaitin->theloai->id == $item->id)
+                                                                            {{"selected"}}
+                                                                            @endif
+                                                                            value="{{$item->id}}">{{$item->ten}}</option>
+                                                                    @endforeach
+                                                                </select>
                                                             </div>
-                                                        @endif
-                                                            @if(session('Error'))
-                                                                <div class="alert alert-danger">
-                                                                    {{session('Error')}}
-                                                                </div>
-                                                            @endif
-                                                        <form action="{{route('update.news',['id'=>$News])}}}" method="POST" enctype="multipart/form-data">
-                                                            <input type="hidden" name="_token" value="{{csrf_token()}}" />
-
-                                                                    <div class="form-group m-form__group row">
-                                                                        <label class="col-xl-3 col-lg-3 col-form-label"><span
-                                                                                class="text-danger">*</span>Thể loại:</label>
-                                                                        <div class="col-xl-9 col-lg-9">
-                                                                            <select class="form-control select2" name="Theloai" id="Theloaiid">
-                                                                                <option value="" selected>Chọn</option>
-                                                                                @foreach ($Category as $item)
-                                                                                    <option
-                                                                                        @if($News->loaitin->theloai->id == $item->id)
-                                                                                        {{"selected"}}
-                                                                                        @endif
-                                                                                        value="{{$item->id}}">{{$item->ten}}</option>
-                                                                                @endforeach
-                                                                            </select>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="form-group m-form__group row">
-                                                                        <label class="col-xl-3 col-lg-3 col-form-label"><span
-                                                                                class="text-danger">*</span>Loại tin:</label>
-                                                                        <div class="col-xl-9 col-lg-9">
-                                                                            <select class="form-control select2" name="Loaitin" id="Loaitinid">
-                                                                                <option value="" selected>Chọn</option>
-                                                                                @foreach ($Type_of_news as $item)
-                                                                                    <option
-                                                                                        @if($News->loaitin->id == $item->id)
-                                                                                        {{"selected"}}
-                                                                                        @endif
-                                                                                        value="{{$item->id}}">{{$item->ten}}</option>
-                                                                                @endforeach
-                                                                            </select>
-                                                                        </div>
-                                                                    </div>
-                                                            <div class="form-group m-form__group row">
-                                                                <label class="col-xl-3 col-lg-3 col-form-label"><span
-                                                                        class="text-danger">*</span> Tiêu đề: </label>
-                                                                <div class="col-xl-9 col-lg-9">
-                                                                    <input type="text" name="Tieude" class="form-control m-input name-field"
-                                                                           placeholder="Điền tiêu đề" value="{{$News->tieude}}"/>
-                                                                </div>
+                                                        </div>
+                                                        <div class="form-group m-form__group row">
+                                                            <label class="col-xl-3 col-lg-3 col-form-label"><span
+                                                                    class="text-danger">*</span> Tiêu đề: </label>
+                                                            <div class="col-xl-9 col-lg-9">
+                                                                <input type="text" name="Tieude" class="form-control m-input name-field"
+                                                                       placeholder="Điền tiêu đề" value="{{$News->tieude}}"/>
                                                             </div>
-                                                            <div class="form-group m-form__group row">
-                                                                <label class="col-xl-3 col-lg-3 col-form-label"><span
-                                                                        class="text-danger">*</span> Tóm tắt: </label>
-                                                                <div class="col-xl-9 col-lg-9">
+                                                        </div>
+                                                        <div class="form-group m-form__group row">
+                                                            <label class="col-xl-3 col-lg-3 col-form-label"><span
+                                                                    class="text-danger">*</span> Tóm tắt: </label>
+                                                            <div class="col-xl-9 col-lg-9">
                                                                     <textarea name="Tomtat" id="demo" placeholder="Điền tóm tắt"
                                                                               class="form-control m-input name-field"
                                                                               rows="3">{{$News->tomtat}}</textarea>
-                                                                </div>
                                                             </div>
-                                                            <div class="form-group m-form__group row">
-                                                                <label class="col-xl-3 col-lg-3 col-form-label"><span
-                                                                        class="text-danger">*</span> Nội dung: </label>
-                                                                <div class="col-xl-9 col-lg-9">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-6">
+                                                    <div class="m-form__section m-form__section--first">
+                                                        <img style="margin-left: 50%" width="100px" src="{!! asset('image/'.$News->hinh) !!}">
+                                                        <div class="form-group m-form__group row">
+                                                            <label class="col-xl-3 col-lg-3 col-form-label"><span
+                                                                    class="text-danger">*</span>Loại tin:</label>
+                                                            <div class="col-xl-9 col-lg-9">
+                                                                <select class="form-control select2" name="Loaitin" id="Loaitinid">
+                                                                    <option value="" selected>Chọn</option>
+                                                                    @foreach ($Type_of_news as $item)
+                                                                        <option
+                                                                            @if($News->loaitin->id == $item->id)
+                                                                            {{"selected"}}
+                                                                            @endif
+                                                                            value="{{$item->id}}">{{$item->ten}}</option>
+                                                                    @endforeach
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group m-form__group row">
+                                                            <label class="col-xl-3 col-lg-3 col-form-label"><span
+                                                                    class="text-danger">*</span>Nổi bật:</label>
+                                                            <div class="col-xl-9 col-lg-9">
+                                                                <select class="form-control select2" name="Noibat" id="Loaitinid">
+                                                                    <option value="0" selected
+                                                                    @if($News->noibat == 0)
+                                                                        {{"selected"}}
+                                                                        @endif>Có</option>
+                                                                    <option value="1"
+                                                                    @if($News->noibat == 1)
+                                                                        {{"selected"}}
+                                                                        @endif>Không</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group m-form__group row">
+                                                            <label class="col-xl-3 col-lg-3 col-form-label"><span
+                                                                    class="text-danger">*</span> Nội dung: </label>
+                                                            <div class="col-xl-9 col-lg-9">
                                                                     <textarea name="Noidung" id="demo" placeholder="Điền nội dung"
                                                                               class="form-control m-input name-field"
                                                                               rows="3">{{$News->noidung}}</textarea>
-                                                                </div>
                                                             </div>
-                                                                    <img style="margin-left: 50%" width="100px" src="{!! asset('image/'.$News->hinh) !!}">
-                                                            <div class="form-group m-form__group row">
-                                                                <label class="col-xl-3 col-lg-3 col-form-label"><span
-                                                                        class="text-danger">*</span> Hình ảnh: </label>
-                                                                <div class="col-xl-9 col-lg-9">
-                                                                    <input type="file" name="Hinhanh" class="form-control m-input name-field"
-                                                                           placeholder="Điền tiêu đề" />
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group m-form__group row">
-                                                                <label class="col-xl-3 col-lg-3 col-form-label"><span
-                                                                        class="text-danger">*</span>Nổi bật</label>
-                                                                <div class="col-xl-9 col-lg-9">
-                                                                    <div class="m-radio-inline">
-                                                                        <label class="m-radio">
-                                                                            <input name="Noibat" value="0" type="radio"
-                                                                            @if($News->noibat == 0)
-                                                                                {{"checked"}}
-                                                                                @endif
-                                                                            />Không
-                                                                            <span value="0"></span>
-                                                                        </label>
-                                                                        <label class="m-radio">
-                                                                            <input name="Noibat" value="1" type="radio"
-                                                                            @if($News->noibat == 1)
-                                                                                {{"checked"}}
-                                                                                @endif
-                                                                            />Có
-                                                                            <span value="1"></span>
-                                                                        </label>
-                                                                    </div>
-
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-md-12 d-flex justify-content-end">
-                                                                <div class="m-form__actions">
-                                                                    <a href="{{route('show.news')}}"><button type="button" class="btn btn-danger">Hủy</button></a>
-                                                                    <button type="reset" class="btn btn-focus">Làm mới</button>
-                                                                    <button type="submit" class="btn btn-success">Sửa</button>
-                                                                </div>
-                                                            </div>
-                                                        </form>
-                                                        <div class=""></div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="col-md-12 d-flex justify-content-end">
+                                            <div class="m-form__actions">
+                                                <a href="{{route('show.news')}}"><button type="button" class="btn btn-danger">Hủy</button></a>
+                                                <button type="reset" class="btn btn-focus">Làm mới</button>
+                                                <button type="submit" class="btn btn-success">Sửa</button>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </form>
+        </div>
     </div>
     <div class="m-content">
         <div class="m-portlet">
@@ -194,7 +177,7 @@
                                         <td>{{$item->noidung}}</td>
                                         <td>{{$item->created_at}}</td>
                                         <td>
-{{--                                            <a target="_blank" href="sua/{{$item->id}}" class="btn btn-outline-dark m-btn m-btn--icon m-btn--icon-only m-btn--pill m-btn--air">--}}
+                                            {{--                                            <a target="_blank" href="sua/{{$item->id}}" class="btn btn-outline-dark m-btn m-btn--icon m-btn--icon-only m-btn--pill m-btn--air">--}}
                                             <a href="/admin/comment/delete/{{$item->id}}/{{$News->id}}" class="btn btn-outline-dark m-btn m-btn--icon m-btn--icon-only m-btn--pill m-btn--air" data-toggle="m-tooltip"  data-original-title="Xóa ">
                                                 <i class="far fa-trash-alt"></i>
                                             </a>

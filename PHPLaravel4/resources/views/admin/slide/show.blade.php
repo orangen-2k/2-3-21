@@ -17,9 +17,8 @@
                                     </div>
                                 </div>
                             </form>
-                            <table id="myTable"  class="table table-striped- table-bordered table-hover table-checkable dataTable dtr-inline">
-
-                                <thead>
+                            <table class="table m-table m-table--head-bg-success">
+                            <thead>
                                 @if(session('Notification'))
                                     <div class="alert alert-success">
                                         {{session('Notification')}}
@@ -32,7 +31,7 @@
                                     </span>
                                 </a><br/><br/>
                                 <tr align="center">
-                                    <th>ID</th>
+                                    <th>#</th>
                                     <th>Tên</th>
                                     <th>Nôi dung</th>
                                     <th>Hình ảnh</th>
@@ -41,9 +40,27 @@
                                 </tr>
                                 </thead>
                                 <tbody align="center">
+                                <script>
+                                    function onLoadAvatar(e){
+                                        let name = e.getAttribute('data-name');
+                                        e.setAttribute('src', "https://ui-avatars.com/api/?name=" + name + "&background=random");
+                                    }
+                                </script>
+                                @php
+                                    use Illuminate\Support\Facades\Auth;
+                                    $i = 1;
+                                    function displayAvatar($avatarImg, $name)
+                                    {
+                                    if($avatarImg != null) {
+                                        return asset('storage/' . $avatarImg);
+                                    }
+                                        // return asset('images/avatar-default.png');
+                                        return 'https://ui-avatars.com/api/?name=' . $name . '&background=random';
+                                    }
+                                @endphp
                                 @foreach ($Slide as $item)
                                     <tr>
-                                        <td>{{$item->id}}</td>
+                                        <td scope="row">{{$i++}}</td>
                                         <td>{{$item->ten}}</td>
                                         <td>{{$item->noidung}}</td>
                                         <td>
@@ -53,10 +70,10 @@
                                         <td>
                                             {{--                                            <a target="_blank" href="sua/{{$item->id}}" class="btn btn-outline-dark m-btn m-btn--icon m-btn--icon-only m-btn--pill m-btn--air">--}}
                                             <a href="{{route('update.slide',['id'=>$item])}}" class="btn btn-outline-dark m-btn m-btn--icon m-btn--icon-only m-btn--pill m-btn--air" data-toggle="m-tooltip"  data-original-title="Sửa">
-                                                <i class="fa fa-pen-alt"></i>
+                                                <i class="fa fa-pen-alt" style="color: #35cc3a;"></i>
                                             </a>
                                             <a href="{{route('delete.slide',['id'=>$item])}}" class="btn btn-outline-dark m-btn m-btn--icon m-btn--icon-only m-btn--pill m-btn--air" data-toggle="m-tooltip"  data-original-title="Xóa ">
-                                                <i class="far fa-trash-alt"></i>
+                                                <i class="far fa-trash-alt" style="color: #ea0c0c;"></i>
                                             </a>
                                         </td>
                                     </tr>

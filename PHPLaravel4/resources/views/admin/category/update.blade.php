@@ -19,10 +19,7 @@
                                                 <div class="col-md-12">
                                                     <div class="m-form__heading">
                                                         <h3 class="m-form__heading-title" style="font-weight: bold">
-                                                            Thể loại {{$Category->ten}}
-                                                            <i data-toggle="m-tooltip" data-width="auto"
-                                                               class="m-form__heading-help-icon flaticon-info" title=""
-                                                               data-original-title="Thông tin giáo viên"></i>
+                                                            Thể loại: <a style="color: #ff0000;">{{$Category->ten}}</a>
                                                         </h3>
                                                     </div>
                                                 </div>
