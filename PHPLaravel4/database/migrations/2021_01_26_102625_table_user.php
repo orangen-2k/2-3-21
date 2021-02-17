@@ -20,7 +20,7 @@ class TableUser extends Migration
             $table->string('avatar')->nullable();
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('phoneNumber');
+            $table->string('phoneNumber')->nullable();
             $table->string('birthYear')->nullable();
             $table->string('province')->nullable();
             $table->string('summary')->nullable();

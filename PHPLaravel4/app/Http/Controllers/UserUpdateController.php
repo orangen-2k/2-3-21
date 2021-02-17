@@ -44,21 +44,23 @@ class UserUpdateController extends Controller
 
     public function postpassword(Request $request)
     {
-        if (!(Hash::check($request->get('Password'), Auth::user()->password))) {
-            return redirect()->back()
-                ->with("error","Mật khẩu cũ không chính xác! Vui lòng kiểm tra lại.");
-        }
         $this->validate($request,
             [
+                'Password'=>'required',
                 'Passwordnew'=>'required',
                 'Passwordnew-again'=>'required|same:Passwordnew',
             ],
             [
                 'Password.required'=>'Bạn chưa nhập mật khẩu cũ',
                 'Passwordnew.required'=>'Bạn chưa nhập mật khẩu mới',
+                'Passwordnew-again.required'=>'Bạn chưa nhập lại mật khẩu mới',
                 'Passwordnew-again.same'=>'Mật khẩu mới nhập lại không chính xác',
             ]
         );
+        if (!(Hash::check($request->get('Password'), Auth::user()->password))) {
+            return redirect()->back()
+                ->with("error","Mật khẩu cũ không chính xác! Vui lòng kiểm tra lại.");
+        }
         $user = Auth::user();
         $user->password = bcrypt($request->Passwordnew);
         $user->save();

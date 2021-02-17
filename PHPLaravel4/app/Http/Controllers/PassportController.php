@@ -4,11 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Charts\UserChart;
 use App\Loaitin;
+use App\Mail\SendMailable;
 use App\Theloai;
 use App\Tintuc;
 use App\User;
+use \Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
+use function Illuminate\Support\Facades\App;
 
 class PassportController extends Controller
 {
@@ -60,9 +65,70 @@ class PassportController extends Controller
     }
 
     // Truyền đến màn forgot.blade.php
-    public function forgot()
+    public function getforgot()
     {
         return view('passport.forgot');
+    }
+
+    // Truyền đến màn forgot.blade.php
+    public function postforgot(Request $request)
+    {
+        $this->validate($request,
+            [
+                'email-forgot'=>'required|email',
+            ],
+            [
+                'email-forgot.required'=>'Bạn chưa nhập tài khoản Email',
+                'email-forgot.email'=>'Bạn nhập Email không đúng định dạng',
+            ]
+        );
+        $checkemail = User::where('email',$request->get('email-forgot'))->count();
+        if (!$checkemail > 0) {
+            return redirect()->back()->with("error","Tài khoản Email không tồn tại");
+        }
+        Mail::to($request->get('email-forgot'))->send(new SendMailable());
+        return redirect()->route('check.forgot');
+    }
+
+    // Truyền đến màn forgot.blade.php
+    public function getcheckforgot()
+    {
+        echo Session::get('Randum');
+        return view('passport.check-forgot');
+    }
+
+    // Truyền đến màn forgot.blade.php
+    public function postcheckforgot(Request $request)
+    {
+        $this->validate($request,
+            [
+                'check-forgot'=>'required',
+            ],
+            [
+                'check-forgot.required'=>'Bạn chưa nhập mã xác nhận',
+            ]
+        );
+        $checkemail = User::where('email',$request->get('email-forgot'))->count();
+        if (!$checkemail > 0) {
+            return redirect()->back()->with("error","Tài khoản Email không tồn tại");
+        }
+        if (!$request->get('check-forgot') == Session::get('Randum')) {
+            return redirect()->back()
+                ->with("error","Mã xác nhận không chính xác");
+        }
+        return view('passport.update-forgot');
+    }
+
+    // Truyền đến màn forgot.blade.php
+    public function getupdateforgot()
+    {
+        return view('passport.update-forgot');
+    }
+
+    // Truyền đến màn forgot.blade.php
+    public function postupdateforgot()
+    {
+        return view('passport.update-forgot');
     }
 
     // Truyền đến màn login.blade.php
@@ -110,12 +176,14 @@ class PassportController extends Controller
     public function postregister(Request $request){
         $this->validate($request,
             [
+                'UserName'=>'required',
                 'Name'=>'required',
                 'Email'=>'required|email|min:1|max:100|unique:users,email',
                 'Password'=>'required',
                 'Password-again'=>'required|same:Password',
             ],
             [
+                'UserName.required'=>'Bạn chưa nhập họ và tên',
                 'Email.required'=>'Bạn chưa nhập Email',
                 'Email.min'=>'Email phải có từ 1-100 ký tự',
                 'Email.max'=>'Email phải có từ 1-100 ký tự',
@@ -128,10 +196,10 @@ class PassportController extends Controller
             ]
         );
         $user = new User;
+        $user->username = "$request->UserName";
         $user->name = "$request->Name";
         $user->email = $request->Email;
-        $user->number = "";
-        $user->level = "2";
+        $user->level = "0";
         $user->password = bcrypt($request->Password);
         $user->save();
         return redirect()->route('login')->with('Notification','Thêm người dùng '."[ $user->name ]".' thành công');

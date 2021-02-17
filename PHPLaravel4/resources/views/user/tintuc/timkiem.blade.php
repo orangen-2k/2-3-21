@@ -40,7 +40,7 @@
                                                 <?php function doimau($str, $tukhoa){
                                                         return str_replace($tukhoa, "<span style='color: #ff0000'>$tukhoa</span>", $str);
                                                     } ?>
-                                                <h1>Tìm kiếm: {{$Tukhoa}}</h1>
+                                                <h1>Tìm kiếm: <a style="color: red">{{$Tukhoa}}</a></h1>
                                                 @foreach($Tintuc as $item)
                                                         <div class="col-md-3">
                                                             <div class="entry-thumb">
@@ -67,14 +67,14 @@
                                                                         <h4><a href="{{route('detail.home',['id'=>$item->id,'tinkhongdau'=>$item->tieudekhongdau])}}">{{$item->loaitin->ten}}</a></h4>
                                                                         <div>
                                                                             <div class="col-md-8">
-                                                                                <h5>{{$item->tieude}}</h5>
+                                                                                <h5>{!! doimau($item->tieude, $Tukhoa) !!}</h5>
                                                                             </div>
                                                                         </div>
                                                                     </div><br/><br/>
                                                                 </div>
 
                                                                 <div class="entry-summary">
-                                                                    {{$item->tomtat}}
+                                                                    {!! doimau($item->tomtat, $Tukhoa) !!}
                                                                 </div>
                                                             </div>
 

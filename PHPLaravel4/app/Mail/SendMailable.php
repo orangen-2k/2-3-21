@@ -6,11 +6,13 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\Session;
 
 class SendMailable extends Mailable
 {
     use Queueable, SerializesModels;
 
+//    public $details;
     /**
      * Create a new message instance.
      *
@@ -18,7 +20,7 @@ class SendMailable extends Mailable
      */
     public function __construct()
     {
-        //
+//        $this->detals = $details;
     }
 
     /**
@@ -28,6 +30,8 @@ class SendMailable extends Mailable
      */
     public function build()
     {
-        return $this->view('name');
+        $randum = randomfogot(5);
+        Session::put('Randum', $randum);
+        return $this->subject('Mã xác nhận')->view('passport.notification', ['Randum' => $randum]);
     }
 }

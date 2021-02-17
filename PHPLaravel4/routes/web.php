@@ -1,9 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
-use App\Theloai;
-use App\Mail\SendMailable;
+
 // admin va user
 Route::get('','PassportController@admin')->name('admin')->middleware('checklogin');
 Route::get('admin/home','PassportController@admin')->name('admin.home')->middleware('checklogin');
@@ -11,7 +9,12 @@ Route::get('admin/home','PassportController@admin')->name('admin.home')->middlew
 Route::get('login','PassportController@getlogin')->name('login');
 Route::post('login','PassportController@postlogin')->name('login');
 Route::get('logout','PassportController@logout')->name('logout');
-Route::get('forgot','PassportController@forgot')->name('forgot');
+Route::get('forgot','PassportController@getforgot')->name('forgot');
+Route::post('forgot','PassportController@postforgot')->name('forgot');
+Route::get('check-forgot','PassportController@getcheckforgot')->name('check.forgot');
+Route::post('check-forgot','PassportController@postcheckforgot')->name('check.forgot');
+Route::get('update-forgot','PassportController@getupdateforgot')->name('update.forgot');
+Route::post('update-forgot','PassportController@postupdateforgot')->name('update.forgot');
 Route::get('register','PassportController@getregister')->name('register');
 Route::post('register','PassportController@postregister')->name('register');
 
@@ -113,6 +116,5 @@ Route::get('update-password/home/{id}','UserhomeController@getchangepassport')->
 Route::post('update-password/home/{id}','UserhomeController@postchangepassport')->name('change.passport');
 Route::get('update-information/home/{id}','UserhomeController@getchangeinfomation')->name('change.information');
 Route::post('update-information/home/{id}','UserhomeController@postchangeinfomation')->name('change.information');
-
 
 ?>

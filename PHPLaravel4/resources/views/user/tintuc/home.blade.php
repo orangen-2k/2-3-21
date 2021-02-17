@@ -150,7 +150,7 @@
                                         <div class="blog-content blog-content-list">
                                             <div id="post-01" class="clearfix post type-post status-publish format-standard has-post-thumbnail hentry category-blog tag-couples tag-wedding">
                                                 <div class="entry clearfix">
-                                                    @foreach($Theloaihome as  $item)
+                                                    @foreach($Theloaihome as $item)
                                                         @if(count($item->loaitin) > 0)
                                                             <?php $data = $item->tintuc->where('noibat',1)->sortByDesc('created_at')->take(2);?>
                                                             @foreach($data->all() as $tintuc)
