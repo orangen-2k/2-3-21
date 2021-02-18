@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Charts\UserChart;
 use App\Loaitin;
 use App\Mail\SendMailable;
+use App\Mail\SendMailNew;
 use App\Theloai;
 use App\Tintuc;
 use App\User;
@@ -46,19 +47,17 @@ class PassportController extends Controller
             "rgba(205,220,57, 0.2)"
 
         ];
-        $theloai = new Theloai();
-        $khoahoc = Loaitin::where('idtheloai',1)->count();
-        $kythuat = Loaitin::where('idtheloai',2)->count();
-        $chinhtri = Loaitin::where('idtheloai',3)->count();
-        $phapluat = Loaitin::where('idtheloai',4)->count();
-        $congnghe = Loaitin::where('idtheloai',5)->count();
-        $xahoi = Loaitin::where('idtheloai',6)->count();
-        $congdong = Loaitin::where('idtheloai',7)->count();
-        $hoctap = Loaitin::where('idtheloai',8)->count();;
+        $khoahoc = Tintuc::where('idloaitin',1)->count();
+        $kythuat = Tintuc::where('idloaitin',2)->count();
+        $chinhtri = Tintuc::where('idloaitin',3)->count();
+        $phapluat = Tintuc::where('idloaitin',4)->count();
+        $congnghe = Tintuc::where('idloaitin',5)->count();
+        $xahoi = Tintuc::where('idloaitin',6)->count();
+        $congdong = Tintuc::where('idloaitin',7)->count();
         $usersChart = new UserChart;
         $usersChart->minimalist(true);
-        $usersChart->labels(['Khoa học','Kỹ thuật', 'Chính trị', 'Pháp luật','Công nghệ','Xã hội', 'Cộng đồng', 'Học tập']);
-        $usersChart->dataset('Users by trimester', 'bar', [$khoahoc,$kythuat, $chinhtri, $phapluat,$congnghe,$xahoi, $congdong, $hoctap])
+        $usersChart->labels(['Vui chơi', 'Học tập', 'Nghỉ ngơi', 'Môi trường', 'Hoạt động', 'Thông báo', 'Học phí', ]);
+        $usersChart->dataset('Số lượng tin', 'bar', [$khoahoc,$kythuat, $chinhtri, $phapluat,$congnghe,$xahoi, $congdong])
             ->color($borderColors)
             ->backgroundcolor($fillColors);
         return view('admin.chart', [ 'usersChart' => $usersChart ] );
@@ -83,6 +82,7 @@ class PassportController extends Controller
             ]
         );
         $checkemail = User::where('email',$request->get('email-forgot'))->count();
+        Session::put('Email-Forgot', $request->get('email-forgot'));
         if (!$checkemail > 0) {
             return redirect()->back()->with("error","Tài khoản Email không tồn tại");
         }
@@ -93,7 +93,6 @@ class PassportController extends Controller
     // Truyền đến màn forgot.blade.php
     public function getcheckforgot()
     {
-        echo Session::get('Randum');
         return view('passport.check-forgot');
     }
 
@@ -108,15 +107,11 @@ class PassportController extends Controller
                 'check-forgot.required'=>'Bạn chưa nhập mã xác nhận',
             ]
         );
-        $checkemail = User::where('email',$request->get('email-forgot'))->count();
-        if (!$checkemail > 0) {
-            return redirect()->back()->with("error","Tài khoản Email không tồn tại");
+        $randumsend = Session::get('Randum');
+        if ($request->get('check-forgot') != $randumsend) {
+            return redirect()->back()->with("error","Mã xác nhận không chính xác");
         }
-        if (!$request->get('check-forgot') == Session::get('Randum')) {
-            return redirect()->back()
-                ->with("error","Mã xác nhận không chính xác");
-        }
-        return view('passport.update-forgot');
+        return redirect()->route('update.forgot');
     }
 
     // Truyền đến màn forgot.blade.php
@@ -126,9 +121,25 @@ class PassportController extends Controller
     }
 
     // Truyền đến màn forgot.blade.php
-    public function postupdateforgot()
+    public function postupdateforgot(Request $request)
     {
-        return view('passport.update-forgot');
+        $this->validate($request,
+            [
+                'newforgot'=>'required',
+                'newagainforgot'=>'required|same:newforgot',
+            ],
+            [
+                'newforgot.required'=>'Bạn chưa nhập mật khẩu mới',
+                'newagainforgot.required'=>'Bạn chưa nhập nhập lại mật khẩu mới',
+                'newagainforgot.same'=>'Bạn nhập lại mật khẩu không chính xác',
+            ]
+        );
+        $emailforgot = Session::get('Email-Forgot');
+        $idforgot = User::select('id')->where('email', $emailforgot)->get();
+        $userforgot = User::find($idforgot[0]['id']);
+        $userforgot->password = bcrypt($request->newforgot);
+        $userforgot->save();
+        return view('passport.login');
     }
 
     // Truyền đến màn login.blade.php
@@ -202,6 +213,28 @@ class PassportController extends Controller
         $user->level = "0";
         $user->password = bcrypt($request->Password);
         $user->save();
-        return redirect()->route('login')->with('Notification','Thêm người dùng '."[ $user->name ]".' thành công');
+        return redirect()->route('login');
+    }
+
+    public function postemailnew(Request $request){
+        $this->validate($request,
+            [
+                'emailmew'=>'required|email|unique:users,email',
+            ],
+            [
+                'emailmew.required'=>'Bạn chưa nhập Email',
+                'emailmew.email'=>'Bạn chưa nhập đúng định dạng Email',
+                'emailmew.unique'=>'Email đã tồn tại',
+            ]
+        );
+        $randumsend = Session::get('Randumnewmail');
+        $usernewemail = new User;
+        $usernewemail->email = $request->emailmew;
+        $usernewemail->level = '0';
+        $usernewemail->password = bcrypt($randumsend);
+        $usernewemail->save();
+        return redirect()->route('home');
+        Mail::to($request->get('email-forgot'))->send(new SendMailNew());
+        return redirect()->route('home');
     }
 }

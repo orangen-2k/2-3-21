@@ -12,7 +12,7 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" name="keyword" placeholder="Nhập từ bạn muốn tìm..." value="{{$keyword}}" />
+                                            <input type="text" class="form-control" name="tieude" placeholder="Nhập tiêu đề bạn muốn tìm..." value="{{$keyword}}" />
                                         </div>
                                     </div>
                                 </div>

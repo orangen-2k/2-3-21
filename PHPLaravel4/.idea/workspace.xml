@@ -2,22 +2,110 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="deeeda85-705d-44f5-bd11-dc086f7ee1e3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/passport/check-forgot.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/passport/notification.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/passport/passport.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/passport/update-forgot.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Mail/SendMailNew.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_26_102558_tableommentdetail.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/image/1.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LoaitinController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LoaitinController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PassportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PassportController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ShowwebsiteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ShowwebsiteController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SlideController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SlideController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TintucController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TintucController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserUpdateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserUpdateController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Mail/SendMailable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/SendMailable.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserhomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserhomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/function/function.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/function/function.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_26_102625_table_user.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_26_102625_table_user.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/style.bundle.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.bundle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/passport/forgot.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/passport/forgot.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/passport/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/passport/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/passport/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/passport/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css-user/app-orange.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css-user/app-orange.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css-user/owl.carousel.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css-user/owl.carousel.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/0Qbpv_Screenshot from 2021-01-22 14-04-16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/2W1HB_Screenshot from 2021-01-22 14-03-52.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/2W8Pw_Screenshot from 2021-01-21 16-41-52.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/48NhJ_23769925_1858068587837531_1732474155_o.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/4YxDH_17431416_1744459065865151_718497225_o.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/5WiFc_23769925_1858068587837531_1732474155_o.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/5jSwn_17431416_1744459065865151_718497225_o.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/5qpFU_Screenshot from 2021-01-22 14-03-52.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/6KGC8_13164239_176088359452730_8314617340550826267_n.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/6PSY5_Screenshot from 2021-01-21 16-41-52.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/B6v9W_23760015_1858068574504199_477568301_o.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/CKmPy_Screenshot from 2021-01-26 14-30-09.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/CgPdQ_13164239_176088359452730_8314617340550826267_n.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/DHl4X_Screenshot from 2021-01-22 17-00-44.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/Df1vs_23770332_1858068584504198_1410805812_o.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/E21tV_Screenshot from 2021-01-22 16-00-41.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/EJUOS_Screenshot from 2021-01-25 16-54-54.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/FVPO9_Screenshot from 2021-01-22 17-00-44.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/Fq0HC_17431416_1744459065865151_718497225_o.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/H1jew_Screenshot from 2021-01-22 16-00-47.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/I4S6H_Screenshot from 2021-01-22 16-00-47.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/IjQFp_23760015_1858068574504199_477568301_o.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/IrMAu_17431416_1744459065865151_718497225_o.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/JJ1OA_17431416_1744459065865151_718497225_o.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/KEBJ0_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/KxCAh_Screenshot from 2021-01-22 16-00-41.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/LJwDi_17431416_1744459065865151_718497225_o.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/MGg2T_23769925_1858068587837531_1732474155_o.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/MR5tz_Screenshot from 2021-01-22 14-03-52.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/Mxp9q_13164239_176088359452730_8314617340550826267_n.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/Piqty_20190415_140036 .jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/S87oo_Screenshot from 2021-01-22 16-00-41.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/SEui6_Screenshot from 2021-01-26 15-27-00.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/T7CEU_Screenshot from 2021-01-22 16-00-47.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/WKp5I_49341998_2125369931107394_3336962123229036544_n.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/WYxjy_Screenshot from 2021-01-21 16-41-52.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/WqZLS_Screenshot from 2021-01-26 14-28-16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/Y5BWH_Screenshot from 2021-01-22 14-03-52.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/aEIvG_Screenshot from 2021-01-21 16-44-44.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/blbxq_Screenshot from 2021-01-21 16-09-21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/c0sqY_23769925_1858068587837531_1732474155_o.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/cDCGK_Screenshot from 2021-01-22 14-03-52.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/d52n4_Screenshot from 2021-01-22 14-03-52.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/f5P0L_Screenshot from 2021-01-21 16-41-52.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/h7ywW_Screenshot from 2021-01-21 16-09-21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/m9LpS_13164239_176088359452730_8314617340550826267_n.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/ncDXs_23769925_1858068587837531_1732474155_o.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/ntaUg_Screenshot from 2021-01-22 14-04-16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/oToIj_Screenshot from 2021-01-25 16-53-51.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/ojdwT_Screenshot from 2021-01-22 16-00-47.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/q3c6B_Screenshot from 2021-01-22 14-04-16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/rlW1p_13164239_176088359452730_8314617340550826267_n.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/rvAzz_Screenshot from 2021-01-26 14-29-27.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/tbCrX_Screenshot from 2021-01-26 14-28-16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/u8BEY_Screenshot from 2021-01-26 14-29-27.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/utO1V_13164239_176088359452730_8314617340550826267_n.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/x1Pgb_Screenshot from 2021-01-26 14-28-16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/xEz3B_48361167_325497544716137_3359907384712495104_n.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/yCP4F_Screenshot from 2021-01-25 16-54-54.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/image/yPDJd_43740021_1259677180835841_665534405472681984_o - Copy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/category/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/category/add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/category/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/category/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/category/update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/category/update.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/layout/_share/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layout/_share/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/layout/_share/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layout/_share/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/loaitin/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/loaitin/add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/loaitin/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/loaitin/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/loaitin/update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/loaitin/update.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/slide/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/slide/add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/slide/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/slide/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/slide/update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/slide/update.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/tintuc/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/tintuc/add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/tintuc/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/tintuc/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/tintuc/update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/tintuc/update.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/user-update/information.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/user-update/information.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/user-update/password.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/user-update/password.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/user/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/user/add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/user/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/user/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/user/update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/user/update.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/passport/update-forgot.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/passport/update-forgot.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/layout/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/layout/footer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/layout/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/layout/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/layout/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/layout/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/tintuc/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/tintuc/detail.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/user/tintuc/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/tintuc/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/tintuc/loaitin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/tintuc/loaitin.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/user/tintuc/timkiem.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/tintuc/timkiem.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -171,18 +259,18 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../z/PHPTraining/PHPLaravel" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/database/migrations" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/database/migrations" />
       <recent name="$PROJECT_DIR$/resources/views/passport" />
       <recent name="$PROJECT_DIR$/resources/views" />
       <recent name="D:\xampp\htdocs\2-3-21\PHPLaravel4\resources\views\admin\user-update" />
       <recent name="$PROJECT_DIR$/resources/views/user/user-home" />
-      <recent name="$PROJECT_DIR$/resources/views/user/tool" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\xampp\htdocs\2-3-21\PHPLaravel4\resources\views\admin" />
@@ -238,6 +326,7 @@
       <workItem from="1613557271229" duration="135000" />
       <workItem from="1613557427874" duration="51000" />
       <workItem from="1613557498751" duration="854000" />
+      <workItem from="1613612312357" duration="28904000" />
     </task>
     <servers />
   </component>

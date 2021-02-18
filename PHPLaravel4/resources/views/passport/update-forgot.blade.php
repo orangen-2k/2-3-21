@@ -15,15 +15,30 @@
 
                         <div class="m-login__head">
                             <h3 class="m-login__title">Quên mật khẩu ?</h3>
-                            <div class="m-login__desc">Vui lòng nhập email để lấy lại mật khẩu:</div>
+                            <div class="m-login__desc">Xác nhận nhập mật khẩu mới:</div>
                         </div>
-                        <form class="m-login__form m-form" action="/" method="POST">
+                        <form class="m-login__form m-form" action="update-forgot" method="POST">
                             @csrf
+                            @if(count($errors) > 0)
+                                <div class="alert alert-danger">
+                                    @foreach($errors->all() as $err)
+                                        {{$err}}<br/>
+                                    @endforeach
+                                </div>
+                            @endif
+                            @if(session('error'))
+                                <div class="alert alert-danger">
+                                    {{session('error')}}
+                                </div>
+                            @endif
                             <div class="form-group m-form__group">
-                                <input class="form-control m-input" type="text" placeholder="Tài khoản Email" name="email-forgot" autocomplete="off">
+                                <input class="form-control m-input" type="password" placeholder="Nhập mật khẩu mới" name="newforgot" autocomplete="off">
+                            </div>
+                            <div class="form-group m-form__group">
+                                <input class="form-control m-input" type="password" placeholder="Nhập lại mật khẩu mới" name="newagainforgot" autocomplete="off">
                             </div>
                             <div class="m-login__form-action">
-                                <button type="submit" class="btn btn-focus m-btn m-btn--pill m-btn--custom m-btn--air  m-login__btn m-login__btn--primaryr">Gửi</button>&nbsp;&nbsp;
+                                <button type="submit" class="btn btn-focus m-btn m-btn--pill m-btn--custom m-btn--air  m-login__btn m-login__btn--primaryr">Xác nhận</button>&nbsp;&nbsp;
                                 <a class="btn btn-outline-focus m-btn m-btn--pill m-btn--custom m-login__btn" href="login" >Hủy</a>
                             </div>
                         </form>

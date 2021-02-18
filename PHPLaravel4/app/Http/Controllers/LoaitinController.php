@@ -10,16 +10,16 @@ class LoaitinController extends Controller
 {
     //
     public function getshow(Request $request){
-        if($request->keyword){
+        if($request->tenloaitin){
 
             $type_of_news = Loaitin::where(
-                'ten', 'like', "%".$request->keyword."%"
+                'ten', 'like', "%".$request->tenloaitin."%"
             )->paginate(10);
-            $type_of_news->withPath('?keyword=' . $request->keyword);
+            $type_of_news->withPath('?tenloaitin=' . $request->tenloaitin);
         }else{
             $type_of_news = Loaitin::orderBy('id','desc')->paginate(10);
         }
-        return view('admin.loaitin.show', ['Type_of_news' => $type_of_news,'keyword' => $request->keyword]);
+        return view('admin.loaitin.show', ['Type_of_news' => $type_of_news,'keyword' => $request->tenloaitin]);
         $type_of_news = Loaitin::all();
         return view('admin.loaitin.show',['Type_of_news'=>$type_of_news]);
     }

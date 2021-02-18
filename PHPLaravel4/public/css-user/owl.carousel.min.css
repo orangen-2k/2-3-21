@@ -1,4 +1,4 @@
-/* 
+/*
  *  Owl Carousel - Animate Plugin
  */
 .owl2-carousel .animated {
@@ -41,7 +41,7 @@
     }
 }
 
-/* 
+/*
  * 	Owl Carousel - Auto Height Plugin
  */
 .owl2-height {
@@ -52,7 +52,7 @@
     transition: height 500ms ease-in-out;
 }
 
-/* 
+/*
  *  Core Owl Carousel CSS File
  */
 .owl2-carousel {
@@ -99,10 +99,10 @@
     user-select: none;
 }
 
-.owl2-carousel .owl2-controls {	
+.owl2-carousel .owl2-controls {
 	position: absolute;
     bottom: 10px;
-    left: 50%;
+    left: 46%;
 }
 
 .owl2-carousel.owl2-loaded {
@@ -138,7 +138,7 @@
 
 .owl2-carousel .owl2-item img {
     display: block;
-   
+
     -webkit-transform-style: preserve-3d;
 }
 
@@ -170,7 +170,7 @@
     display: block;
 }
 
-/* 
+/*
  * 	Owl Carousel - Lazy Load Plugin
  */
 .owl2-carousel .owl2-item .owl2-lazy {
@@ -187,7 +187,7 @@
 	width:100%;
 }
 
-/* 
+/*
  * 	Owl Carousel - Video Plugin
  */
 .owl2-carousel .owl2-video-wrapper {

@@ -6,7 +6,7 @@
             <div class="m-stack__item m-brand  m-brand--skin-dark ">
                 <div class="m-stack m-stack--ver m-stack--general">
                     <div class="m-stack__item m-stack__item--middle m-brand__logo">
-                        <a href="{{ url('user') }}" class="m-brand__logo-wrapper">
+                        <a href="/" class="m-brand__logo-wrapper">
                             <img alt="CoolKids"
                                  src="{{asset('image/logo-login.png')}}" style="max-width: 100%;
                                 display: block;
@@ -101,7 +101,7 @@
                             </script>
                             <li class="m-nav__item m-topbar__user-profile m-topbar__user-profile--img  m-dropdown m-dropdown--medium m-dropdown--arrow m-dropdown--header-bg-fill m-dropdown--align-right m-dropdown--mobile-full-width m-dropdown--skin-light"
                                 m-dropdown-toggle="click">
-                                <a href="#" class="m-nav__link m-dropdown__toggle">
+                                <a class="m-nav__link m-dropdown__toggle">
                                     <span class="m-topbar__userpic">
                                         <img src="{{asset('image/'.Auth::user()->avatar)}}" class="m--img-rounded m--marginless error_avatar"   onerror="errorLoadAvatar(this)" width="40px" height="40px"/>
                                     </span>
@@ -117,8 +117,8 @@
                                                 </div>
                                                 <div class="m-card-user__details">
                                                     <span class="m-card-user__name m--font-weight-500">{{ Auth::user()->name }}</span>
-                                                    <a href="#" class="m-card-user__email m--font-weight-300 m-link">
-                                                        {{ Auth::user()->email }}</a>
+                                                    <p class="m-card-user__email m--font-weight-300">
+                                                        {{ Auth::user()->email }}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -130,18 +130,22 @@
                                                     </li>
                                                     <li class="m-nav__item">
                                                         <a href="{{route('user.update.information')}}" class="m-nav__link">
-                                                            <i class="far fa-user"></i>
+                                                            <i class="far fa-user" style="margin-top: 3px;"></i>
                                                             <span class="m-nav__link-title">
-                                                                <span class="m-nav__link-wrap">
+                                                                <span class="m-nav__link-wrap" style="margin-left: -120px;">
                                                                     <span class="m-nav__link-text">Trang cá nhân</span>
                                                                 </span>
                                                             </span>
                                                         </a>
                                                     </li>
                                                     <li class="m-nav__item">
-                                                        <a href="{{route('user.update.password')}}" class="m-nav__link">
-                                                            <i class="fas fa-lock"></i>
-                                                            <span class="m-nav__link-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Đổi mật khẩu</span>
+                                                        <a href="{{route('user.update.password')}}"  class="m-nav__link">
+                                                            <i class="fas fa-lock" style="margin-top: 3px;"></i>
+                                                            <span class="m-nav__link-title">
+                                                                <span class="m-nav__link-wrap" style="margin-left: -120px;">
+                                                            <span class="m-nav__link-text">Đổi mật khẩu</span>
+                                                                </span>
+                                                            </span>
                                                         </a>
                                                     </li>
                                                     <li class="m-nav__separator m-nav__separator--fit">

@@ -11,7 +11,7 @@ class ShowwebsiteController extends Controller
 {
     //
     public function gethome(Request $request){
-            $theloaihome = Theloai::paginate(7);
+            $theloaihome = Theloai::paginate(5);
         return view('user.tintuc.home', ['Theloaihome' => $theloaihome,'keyword' => $request->keyword]);
     }
     //
@@ -24,14 +24,14 @@ class ShowwebsiteController extends Controller
     //
     public function getloaitin($id){
         $loaitin = Loaitin::find($id);
-        $tintuc = Tintuc::where('idloaitin',$id)->paginate(7);
+        $tintuc = Tintuc::where('idloaitin',$id)->paginate(5);
         return view('user.tintuc.loaitin',['Loaitin'=>$loaitin,'Tintuc'=>$tintuc]);
     }
     //
     public function gettimkiem(Request $request){
         $tukhoa = $request->Tukhoa;
         $tintuc = Tintuc::where('tieude','like',"%$tukhoa%")->orwhere('tomtat','like',"%$tukhoa%")
-            ->take(30)->paginate(7);
+            ->take(30)->paginate(5);
         return view('user.tintuc.timkiem',['Tintuc'=>$tintuc,'Tukhoa'=>$tukhoa]);
     }
 }

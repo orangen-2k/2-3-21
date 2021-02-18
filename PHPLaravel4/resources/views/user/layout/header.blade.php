@@ -16,7 +16,7 @@
                 <div class="wrap-myacc pull-right">
                     @if(!Auth::check())
                     <div class="sidebar-account pull-left">
-                        <a href="login">
+                        <a href="{{route('login')}}">
                             <div class="account-title">Đăng nhập</div>
                         </a>
                     </div>
@@ -25,7 +25,7 @@
                             <div class="widget-inner">
                                 <ul id="menu-checkout" class="menu">
                                     <li class="menu-checkout">
-                                        <a class="item-link" href="checkout.html">
+                                        <a class="item-link" href="{{route('register')}}">
                                             <span class="menu-title">Đăng ký</span>
                                         </a>
                                     </li>

@@ -9,16 +9,16 @@ class CategoryController extends Controller
 {
     //
     public function getshow(Request $request){
-        if($request->keyword){
+        if($request->tentheloai){
 
             $category = Theloai::where(
-                'ten', 'like', "%".$request->keyword."%"
+                'ten', 'like', "%".$request->tentheloai."%"
             )->paginate(10);
-            $category->withPath('?keyword=' . $request->keyword);
+            $category->withPath('?tentheloai=' . $request->tentheloai);
         }else{
             $category = Theloai::orderBy('id','desc')->paginate(10);
         }
-        return view('admin.category.show', ['Category' => $category,'keyword' => $request->keyword]);
+        return view('admin.category.show', ['Category' => $category,'keyword' => $request->tentheloai]);
     }
 
     public function getadd(){

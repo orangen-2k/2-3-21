@@ -13,15 +13,6 @@
                                     <div class="image-input-wrapper"
                                          style="background-image: url('{{asset('image/'.Auth::user()->avatar)}}'), url('https://ui-avatars.com/api/?name={{ Auth::user()->name }}&background=random')">
                                     </div>
-                                    <label
-                                        class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow"
-                                        data-action="change" data-toggle="tooltip" title=""
-                                        data-original-title="Change avatar">
-                                        <i class="fas fa-pencil-alt"></i>
-                                        <input type="file" name="profile_avatar" accept="image/*"
-                                               onchange="changeAvatar(this)">
-                                        <input type="hidden" name="profile_avatar_remove">
-                                    </label>
                                 </div>
                             </div><br/>
                             <div class="m-card-profile__details">
@@ -118,7 +109,7 @@
                                             </div>
                                             <div class="col-7">
                                                 <button type="submit" class="btn btn-success m-btn m-btn--air m-btn--custom">Sửa</button>&nbsp;&nbsp;
-                                                <a href="/"><button type="button" class="btn btn-danger">Hủy</button></a>
+                                                <a href="{{ url('admin') }}"><button type="button" class="btn btn-danger">Hủy</button></a>
                                             </div>
                                         </div>
                                     </div>

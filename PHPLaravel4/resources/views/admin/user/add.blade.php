@@ -48,7 +48,7 @@
                                                                     class="text-danger">*</span> Họ tên đệm: </label>
                                                             <div class="col-xl-9 col-lg-9">
                                                                 <input type="text" name="Hotendem" class="form-control m-input name-field"
-                                                                       placeholder="Điền họ tên đệm" />
+                                                                       placeholder="Điền họ tên đệm" value="{{ old('Hotendem') }}"/>
                                                             </div>
                                                         </div>
                                                         <div class="form-group m-form__group row">
@@ -56,7 +56,7 @@
                                                                     class="text-danger">*</span> Tên: </label>
                                                             <div class="col-xl-9 col-lg-9">
                                                                 <input type="text" name="NameND" class="form-control m-input name-field"
-                                                                       placeholder="Điền tên người dùng" />
+                                                                       placeholder="Điền tên người dùng" value="{{ old('NameND') }}"/>
                                                             </div>
                                                         </div>
                                                         <div class="form-group m-form__group row">
@@ -64,7 +64,7 @@
                                                                     class="text-danger">*</span> Số điện thoại: </label>
                                                             <div class="col-xl-9 col-lg-9">
                                                                 <input type="text" name="Sđt" class="form-control m-input name-field"
-                                                                       placeholder="Điền số điện thoại" />
+                                                                       placeholder="Điền số điện thoại" value="{{ old('Sđt') }}"/>
                                                             </div>
                                                         </div>
                                                         <div class="form-group m-form__group row">
@@ -87,7 +87,7 @@
                                                                     class="text-danger">*</span> Email: </label>
                                                             <div class="col-xl-9 col-lg-9">
                                                                 <input type="email" name="Email" class="form-control m-input name-field"
-                                                                       placeholder="Điền Email" />
+                                                                       placeholder="Điền Email"  value="{{ old('Email') }}"/>
                                                             </div>
                                                         </div>
                                                         <div class="form-group m-form__group row">
@@ -95,7 +95,7 @@
                                                                     class="text-danger">*</span> Mật khẩu: </label>
                                                             <div class="col-xl-9 col-lg-9">
                                                                 <input type="password" name="Password" class="form-control m-input name-field"
-                                                                       placeholder="Điền mật khẩu" />
+                                                                       placeholder="Điền mật khẩu" value="{{ old('Password') }}"/>
                                                             </div>
                                                         </div>
                                                         <div class="form-group m-form__group row">
@@ -103,7 +103,7 @@
                                                                     class="text-danger">*</span>Nhập lại mật khẩu: </label>
                                                             <div class="col-xl-9 col-lg-9">
                                                                 <input type="password" name="Password-again" class="form-control m-input name-field"
-                                                                       placeholder="Điền lại mật khẩu" />
+                                                                       placeholder="Điền lại mật khẩu" value="{{ old('Password-again') }}"/>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -113,7 +113,6 @@
                                             <div class="col-md-12 d-flex justify-content-end">
                                                 <div class="m-form__actions">
                                                     <a href="{{route('show.user')}}"><button type="button" class="btn btn-danger">Hủy</button></a>
-                                                    <button type="reset" class="btn btn-focus">Làm mới</button>
                                                     <button type="submit" class="btn btn-success">Thêm mới</button>
                                                 </div>
                                             </div>

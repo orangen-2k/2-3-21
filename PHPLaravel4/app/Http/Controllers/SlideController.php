@@ -9,16 +9,16 @@ class SlideController extends Controller
 {
     //
     public function getshow(Request $request){
-        if($request->keyword){
+        if($request->tenslide){
 
             $slide = Slide::where(
-                'tieude', 'like', "%".$request->keyword."%"
+                'ten', 'like', "%".$request->tenslide."%"
             )->paginate(10);
-            $slide->withPath('?keyword=' . $request->keyword);
+            $slide->withPath('?tenslide=' . $request->tenslide);
         }else{
             $slide = Slide::orderBy('id','desc')->paginate(10);
         }
-        return view('admin.slide.show', ['Slide' => $slide,'keyword' => $request->keyword]);
+        return view('admin.slide.show', ['Slide' => $slide,'keyword' => $request->tenslide]);
     }
 
     public function getadd(){
@@ -31,8 +31,10 @@ class SlideController extends Controller
                 'Ten'=>'required|min:1|max:100|unique:loaitin,ten',
                 'Noidung'=>'required',
                 'Link'=>'required',
+                'Hinhanh'=>'required',
             ],
             [
+                'Hinhanh.required'=>'Bạn chưa chọn ảnh',
                 'Ten.required'=>'Bạn chưa nhập tiêu đề',
                 'Ten.min'=>'Tên tiêu đề phải có từ 1-100 ký tự',
                 'Ten.max'=>'Tên tiêu đề phải có từ 1-100 ký tự',

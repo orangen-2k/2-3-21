@@ -40,7 +40,7 @@
                                                                     class="text-danger">*</span> Hình ảnh: </label>
                                                             <div class="col-xl-9 col-lg-9">
                                                                 <input type="file" name="Hinhanh" class="form-control m-input name-field"
-                                                                       placeholder="Điền tiêu đề" />
+                                                                       placeholder="Điền tiêu đề"/>
                                                             </div>
                                                         </div>
                                                         <div class="form-group m-form__group row">
@@ -60,7 +60,7 @@
                                                                     class="text-danger">*</span> Tiêu đề: </label>
                                                             <div class="col-xl-9 col-lg-9">
                                                                 <input type="text" name="Tieude" class="form-control m-input name-field"
-                                                                       placeholder="Điền tiêu đề" />
+                                                                       placeholder="Điền tiêu đề" value="{{ old('Tieude') }}"/>
                                                             </div>
                                                         </div>
                                                         <div class="form-group m-form__group row">
@@ -111,7 +111,6 @@
                                             <div class="col-md-12 d-flex justify-content-end">
                                                 <div class="m-form__actions">
                                                     <a href="{{route('show.news')}}"><button type="button" class="btn btn-danger">Hủy</button></a>
-                                                    <button type="reset" class="btn btn-focus">Làm mới</button>
                                                     <button type="submit" class="btn btn-success">Thêm mới</button>
                                                 </div>
                                             </div>

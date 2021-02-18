@@ -4,10 +4,10 @@
     <div id="m_ver_menu" class="m-aside-menu  m-aside-menu--skin-dark m-aside-menu--submenu-skin-dark " m-menu-vertical="1" m-menu-scrollable="1" m-menu-dropdown-timeout="500" style="position: relative;">
         <ul class="m-menu__nav  m-menu__nav--dropdown-submenu-arrow p-0" id="ul-home">
             <li class="m-menu__item  m-menu__item--active" aria-haspopup="true">
-                <a href="/" class="m-menu__link ">
-                    <i class="fas fa-home"></i>
+                <a href="{{ url('admin') }}" class="m-menu__link ">
+                    <i class="fas fa-home" style="margin-top: 5px;"></i>
                     <span class="m-menu__link-title">
-                        <span class="m-menu__link-wrap">
+                        <span class="m-menu__link-wrap" style="margin-left: -60px;">
                             <span class="m-menu__link-text">Trang chủ</span>
                             <span class="m-menu__link-badge"></span>
                         </span>
@@ -22,7 +22,7 @@
         <ul class="m-menu__nav  m-menu__nav--dropdown-submenu-arrow p-0" id="sortable">
             <li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true" m-menu-submenu-toggle="hover">
                 <a href="javascript:;" class="m-menu__link m-menu__toggle">
-                    <i class="fas fa-users"></i>
+                    <i class="fas fa-users" style="margin-top: 5px;"></i>
                     <span class="m-menu__link-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tài khoản</span>
                     <i class="fas fa-chevron-right"></i>
                 </a>
@@ -39,7 +39,7 @@
             </li>
             <li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true" m-menu-submenu-toggle="hover">
                 <a href="javascript:;" class="m-menu__link m-menu__toggle">
-                    <i class="fab fa-creative-commons-sampling-plus"></i>
+                    <i class="fab fa-creative-commons-sampling-plus" style="margin-top: 5px;"></i>
                     <span class="m-menu__link-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Quản lý tin tức</span>
                     <i class="fas fa-chevron-right"></i>
                 </a>
@@ -57,7 +57,7 @@
             </li>
             <li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true" m-menu-submenu-toggle="hover">
                 <a href="javascript:;" class="m-menu__link m-menu__toggle">
-                    <i class="far fa-comments"></i>
+                    <i class="far fa-comments" style="margin-top: 5px;"></i>
                     <span class="m-menu__link-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Quản lý Loại tin</span>
                     <i class="fas fa-chevron-right"></i>
                 </a>
@@ -75,7 +75,7 @@
             </li>
             <li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true" m-menu-submenu-toggle="hover">
                 <a href="javascript:;" class="m-menu__link m-menu__toggle">
-                    <i class="fas fa-tasks"></i>
+                    <i class="fas fa-tasks" style="margin-top: 5px;"></i>
                     <span class="m-menu__link-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Quản lý thể loại</span>
                     <i class="fas fa-chevron-right"></i>
                 </a>
@@ -92,7 +92,7 @@
             </li>
             <li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true" m-menu-submenu-toggle="hover">
                 <a href="javascript:;" class="m-menu__link m-menu__toggle">
-                    <i class="far fa-bell"></i>
+                    <i class="far fa-bell" style="margin-top: 5px;"></i>
                     <span class="m-menu__link-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Slide</span>
                     <i class="fas fa-chevron-right"></i>
                 </a>

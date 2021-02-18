@@ -104,7 +104,6 @@
                                             <div class="col-md-12 d-flex justify-content-end">
                                                 <div class="m-form__actions">
                                                     <a href="{{route('show.user')}}"><button type="button" class="btn btn-danger">Hủy</button></a>
-                                                    <button type="reset" class="btn btn-focus">Làm mới</button>
                                                     <button type="submit" class="btn btn-success">Sửa</button>
                                                 </div>
                                             </div>

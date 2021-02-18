@@ -5987,7 +5987,7 @@ ul.thumbnails {
 }
 
 .sidebar .widget {
-    margin-bottom: 40px;
+    /*margin-bottom: 40px;*/
 }
 
 .sidebar {
@@ -6029,7 +6029,7 @@ ul.thumbnails {
 }
 
 .widget {
-    margin-bottom: 30px;
+    /*margin-bottom: 30px;*/
 }
 
 .widget .widget-inner .block-title-widget {

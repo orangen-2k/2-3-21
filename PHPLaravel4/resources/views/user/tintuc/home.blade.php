@@ -25,7 +25,7 @@
                                                             <div class="wpb_revslider_element wpb_content_element no-margin">
                                                                 <div class="vc_column-inner ">
                                                                     <div class="wpb_wrapper">
-                                                                        <div class="wpb_revslider_element wpb_content_element">
+                                                                        <div class="wpb_revslider_element wpb_content_element" style="margin-left: 6%;">
                                                                             <div id="main-slider" class="fullwidthbanner-container" style="position:relative; width:90%; height:auto; margin-top:0px; margin-bottom:0px">
                                                                                 <div class="module slideshow no-margin">
                                                                                     @include('user.layout.slide')
@@ -156,7 +156,7 @@
                                                             @foreach($data->all() as $tintuc)
                                                                 <div class="col-md-3">
                                                                     <div class="entry-thumb">
-                                                                        <a class="entry-hover" href="{{route('detail.home',['id'=>$tintuc->id,'tinkhongdau'=>$tintuc->tieudekhongdau])}}" title="Jordy Vanden Nieuwendijk">
+                                                                        <a class="entry-hover" href="{{route('detail.home',['id'=>$tintuc->id,'tinkhongdau'=>$tintuc->tieudekhongdau])}}" title="">
                                                                             <img width="200" height="210" src="{{asset('image/'.$tintuc->hinh)}}" class="attachment-large size-large wp-post-image" style="width: 190px;height: 150px;margin: 32px 0px 0px 0px;" sizes="(max-width: 370px) 100vw, 370px">
                                                                         </a>
                                                                     </div>
@@ -229,188 +229,11 @@
                                                 </div>
                                             </div>
                                         </div>
-
-                                        <div class="widget-3 widget sw_posts-2 sw_posts">
-                                            <div class="widget-inner">
-                                                <div class="block-title-widget">
-                                                    <h2><span>Latest Blog</span></h2>
-                                                </div>
-
-                                                <div class="widget-latest-blog">
-                                                    <div class="blog-content">
-                                                        <div class="blog-item">
-                                                            <div class="latest-blog-inner">
-                                                                <div class="widget-content-wrap">
-                                                                    <div class="widget-content">
-                                                                        <div class="item-title">
-                                                                            <h4><a href="post_format_image.html">Jordy Vanden Nieuwendijk</a></h4>
-                                                                        </div>
-
-                                                                        <div class="entry-meta clearfix">
-                                                                            <div class="entry-comment meta-entry">
-                                                                                <a href="post_format_image.html"><i class="fa fa-comments"></i>0  Comment</a>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="blog-item">
-                                                            <div class="latest-blog-inner">
-                                                                <div class="widget-content-wrap">
-                                                                    <div class="widget-content">
-                                                                        <div class="item-title">
-                                                                            <h4><a href="post_format_image.html">Blurring With The Mass Media</a></h4>
-                                                                        </div>
-
-                                                                        <div class="entry-meta clearfix">
-                                                                            <div class="entry-comment meta-entry">
-                                                                                <a href="post_format_image.html"><i class="fa fa-comments"></i>0  Comment</a>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="blog-item">
-                                                            <div class="latest-blog-inner">
-                                                                <div class="widget-content-wrap">
-                                                                    <div class="widget-content">
-                                                                        <div class="item-title">
-                                                                            <h4><a href="post_format_image.html">Style Eye Cream</a></h4>
-                                                                        </div>
-
-                                                                        <div class="entry-meta clearfix">
-                                                                            <div class="entry-comment meta-entry">
-                                                                                <a href="post_format_image.html"><i class="fa fa-comments"></i>0  Comment</a>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="widget-4 widget etrostore_best_seller_product-6 etrostore_best_seller_product">
-                                            <div class="widget-inner">
-                                                <div class="block-title-widget">
-                                                    <h2><span>Best seller</span></h2>
-                                                </div>
-
-                                                <div id="best-seller-01" class="sw-best-seller-product">
-                                                    <ul class="list-unstyled">
-                                                        <li class="clearfix">
-                                                            <div class="item-img">
-                                                                <a href="simple_product.html" title="corned beef enim">
-                                                                    <img width="180" height="180" src="/images-user/1903/65-180x180.jpg" class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image" alt="" srcset="/images-user/1903/65-180x180.jpg 180w, images/1903/65-150x150.jpg 150w, images/1903/65-300x300.jpg 300w, images/1903/65.jpg 600w"
-                                                                         sizes="(max-width: 180px) 100vw, 180px">
-                                                                </a>
-                                                            </div>
-
-                                                            <div class="item-content">
-                                                                <div class="reviews-content">
-                                                                    <div class="star"></div>
-                                                                    <div class="item-number-rating">
-                                                                        0 Review(s)
-                                                                    </div>
-                                                                </div>
-
-                                                                <h4><a href="simple_product.html" title="corned beef enim">Corned beef enim</a></h4>
-
-                                                                <div class="price"><span class="woocommerce-Price-amount amount">$400.00</span></div>
-                                                            </div>
-                                                        </li>
-
-                                                        <li class="clearfix">
-                                                            <div class="item-img">
-                                                                <a href="simple_product.html" title="philips stand">
-                                                                    <img width="180" height="180" src="/images-user/1903/62-180x180.jpg" class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image" alt="" srcset="/images-user/1903/62-180x180.jpg 180w, images/1903/62-150x150.jpg 150w, images/1903/62-300x300.jpg 300w, images/1903/62.jpg 600w"
-                                                                         sizes="(max-width: 180px) 100vw, 180px">
-                                                                </a>
-                                                            </div>
-
-                                                            <div class="item-content">
-                                                                <div class="reviews-content">
-                                                                    <div class="star"></div>
-                                                                    <div class="item-number-rating">
-                                                                        0 Review(s)
-                                                                    </div>
-                                                                </div>
-
-                                                                <h4><a href="simple_product.html" title="philips stand">philips stand</a></h4>
-
-                                                                <div class="price"><del><span class="woocommerce-Price-amount amount">$300.00</span></del> <ins><span class="woocommerce-Price-amount amount">$250.00</span></ins></div>
-                                                            </div>
-                                                        </li>
-
-                                                        <li class="clearfix">
-                                                            <div class="item-img">
-                                                                <a href="simple_product.html" title="Vacuum cleaner">
-                                                                    <img width="180" height="180" src="/images-user/1903/26-180x180.jpg" class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image" alt="" srcset="/images-user/1903/26-180x180.jpg 180w, images/1903/26-150x150.jpg 150w, images/1903/26-300x300.jpg 300w, images/1903/26.jpg 600w"
-                                                                         sizes="(max-width: 180px) 100vw, 180px">
-                                                                </a>
-                                                            </div>
-
-                                                            <div class="item-content">
-                                                                <div class="reviews-content">
-                                                                    <div class="star"><span style="width:52.5px"></span></div>
-                                                                    <div class="item-number-rating">
-                                                                        4 Review(s)
-                                                                    </div>
-                                                                </div>
-
-                                                                <h4><a href="simple_product.html" title="Vacuum cleaner">Vacuum cleaner</a></h4>
-
-                                                                <div class="price"><del><span class="woocommerce-Price-amount amount">$350.00</span></del> <ins><span class="woocommerce-Price-amount amount">$260.00</span></ins></div>
-                                                            </div>
-                                                        </li>
-
-                                                        <li class="clearfix">
-                                                            <div class="item-img">
-                                                                <a href="simple_product.html" title="veniam dolore">
-                                                                    <img width="180" height="180" src="/images-user/1903/45-180x180.jpg" class="attachment-shop_thumbnail size-shop_thumbnail wp-post-image" alt="" srcset="/images-user/1903/45-180x180.jpg 180w, images/1903/45-150x150.jpg 150w, images/1903/45-300x300.jpg 300w, images/1903/45.jpg 600w"
-                                                                         sizes="(max-width: 180px) 100vw, 180px">
-                                                                </a>
-                                                            </div>
-
-                                                            <div class="item-content">
-                                                                <div class="reviews-content">
-                                                                    <div class="star"><span style="width:35px"></span></div>
-                                                                    <div class="item-number-rating">
-                                                                        2 Review(s)
-                                                                    </div>
-                                                                </div>
-
-                                                                <h4><a href="simple_product.html" title="veniam dolore">Veniam dolore</a></h4>
-
-                                                                <div class="price"><del><span class="woocommerce-Price-amount amount">$250.00</span></del> <ins><span class="woocommerce-Price-amount amount">$190.00</span></ins></div>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="widget-5 widget-last widget archives-3 widget_archive">
-                                            <div class="widget-inner">
-                                                <div class="block-title-widget">
-                                                    <h2><span>Archives</span></h2>
-                                                </div>
-
-                                                <ul>
-                                                    <li><a href="blog_left_sidebar.html">February 2017</a>&nbsp;(4)</li>
-                                                    <li><a href="blog_left_sidebar.html">December 2016</a>&nbsp;(23)</li>
-                                                </ul>
-                                            </div>
-                                        </div>
                                     </aside>
                                 </div>
                             </div>
+
+                            <br/><br/><br/>
                             <div class="vc_row vc_row-fluid">
                                 <div class="vc_column_container vc_col-sm-12">
                                     <div class="vc_column-inner ">

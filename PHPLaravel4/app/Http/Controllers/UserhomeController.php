@@ -24,10 +24,6 @@ class UserhomeController extends Controller
     //
     public function postchangepassport(Request $request){
         $user = Auth::user();
-        if (!(Hash::check($request->get('Password-now'), Auth::user()->password))) {
-            return redirect()->back()
-                ->with("error","Mật khẩu cũ không chính xác! Vui lòng kiểm tra lại.");
-        }
         $this->validate($request,
             [
                 'Password-now'=>'required',
@@ -41,6 +37,10 @@ class UserhomeController extends Controller
                 'Passwordnew-again.same'=>'Mật khẩu mới nhập lại không chính xác',
             ]
         );
+        if (!(Hash::check($request->get('Password-now'), Auth::user()->password))) {
+            return redirect()->back()
+                ->with("error","Mật khẩu cũ không chính xác! Vui lòng kiểm tra lại.");
+        }
         $user->password = bcrypt($request->Passwordnew);
         $user->save();
         return redirect()->route('user.home')->with('Notification','Thay đổi mật khẩu thành công');

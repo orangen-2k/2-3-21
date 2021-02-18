@@ -99,30 +99,37 @@
                         </div>
                         <div class="col-md-9">
                             <p>
-                                <img class="alignnone size-full wp-image-405" src="{{asset('image/'.$Tintuc->hinh)}}"
+                                <img style="width: 100%; height: 500px;" class="alignnone size-full wp-image-405" src="{{asset('image/'.$Tintuc->hinh)}}"
                                     alt="6" width="1110" height="780">
                                 {!! $Tintuc->noidung !!}
                             </p>
                             <hr />
                                 <div class="card">
+                                    @if(Auth::check())
                                     <form action="{{route('comment.home',['id'=>$Tintuc])}}" method="post"
                                           id="commentform" name="commentform" class="form-horizontal row-fluid">
                                         <input type="hidden" name="_token" value="{{csrf_token()}}" />
                                         <div class="mt-3 d-flex flex-row align-items-center p-3 form-color">
                                             <img src="{{asset('image/'.Auth::user()->avatar)}}" style="width: 70px; height: 60px" class="rounded-circle mr-2">
-                                            <input type="text" class="form-control" placeholder="Enter your comment..." name="Noidung" /> &nbsp;&nbsp;
-                                            <input type="submit" class="btn btn-success" style="border-radius: 25px; margin-top: -10px; height: 38px;" value="Comment" />
+                                            <input type="text" class="form-control" placeholder="Nhập nội dung bình luận..." name="Noidung" /> &nbsp;&nbsp;
+                                            <input type="submit" class="btn btn-success" style="border-radius: 25px; margin-top: -10px; height: 38px;" value="Bình luận" />
                                         </div>
                                     </form>
+                                    @endif
                                     @foreach($Tintuc->comment->sortByDesc('created_at') as $item)
                                         <div class="mt-2">
-                                            <div class="d-flex flex-row p-3"> <img src="{{asset("image/".$item->user->avatar)}}" style="width: 70px; height: 60px" class="rounded-circle mr-3">
-                                                <div class="w-100">
-                                                    <div class="d-flex justify-content-between align-items-center">
-                                                        <div class="d-flex flex-row align-items-center"> <span class="mr-2">{{$item->user->name}}</span> </div> <small>{{$item->created_at}}</small>
+                                            <div class="d-flex flex-row p-3">
+                                                <div class="col-md-2">
+                                                    <img src="{{asset("image/".$item->user->avatar)}}" style="width: 70px; height: 60px" class="rounded-circle mr-3">
+                                                </div>
+                                                <div class="col-md-10" style="margin-left: -6%;">
+                                                    <div class="w-100">
+                                                        <div class="d-flex justify-content-between align-items-center">
+                                                            <div class="d-flex flex-row align-items-center"> <span class="mr-2">{{$item->user->name}}</span> </div> <small>{{$item->created_at}}</small>
+                                                        </div>
+                                                        <p class="text-justify comment-text mb-0">{{$item->noidung}}</p>
+                                                        <div class="d-flex flex-row user-feed"> <span class="wish"><i class="fa fa-heartbeat mr-2"></i>24</span> <span class="ml-3"><i class="fa fa-comments-o mr-2"></i>Reply</span> </div>
                                                     </div>
-                                                    <p class="text-justify comment-text mb-0">{{$item->noidung}}</p>
-                                                    <div class="d-flex flex-row user-feed"> <span class="wish"><i class="fa fa-heartbeat mr-2"></i>24</span> <span class="ml-3"><i class="fa fa-comments-o mr-2"></i>Reply</span> </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -179,7 +186,7 @@
                                                     <div class="readmore">
                                                         <a
                                                             href="{{route('detail.home',['id'=>$item->id,'tinkhongdau'=>$item->tieudekhongdau])}}"><i
-                                                                class="fa fa-caret-right"></i>Read More</a>
+                                                                class="fa fa-caret-right"></i>Đọc thêm</a>
                                                     </div>
                                                 </div>
                                             </div>

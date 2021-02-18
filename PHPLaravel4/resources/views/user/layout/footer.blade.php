@@ -70,23 +70,33 @@
 
                                     <div class="info-newsletter">
 
-                                        <p>Nhận tất cả các giao dịch, bán hàng và ưu đãi tốt nhất từ cửa hàng mua sắm
-                                            trực tuyến tốt nhất ở UAE. Đăng ký ngay !</p>
+                                        <p>Đăng ký ngay để nhận được các thông tin và thông báo mới nhất.
+                                            Đăng ký ngay !</p>
 
                                         <div class="mc4wp-form">
                                             <div class="newsletter-content">
-                                                <input type="email" class="newsletter-email" name="EMAIL"
-                                                    placeholder="Email của bạn" required="" />
-                                                <input class="newsletter-submit" type="submit" value="Gửi" />
+                                                <form action="{{route('add.email.new')}}" method="POST">
+                                                    @if(count($errors) > 0)
+                                                        <div class="alert alert-danger">
+                                                            @foreach($errors->all() as $err)
+                                                                {{$err}}<br/>
+                                                            @endforeach
+                                                        </div>
+                                                    @endif
+                                                    <input type="hidden" name="_token" value="{{csrf_token()}}" />
+                                                    <input type="email" class="newsletter-email" name="emailmew"
+                                                        placeholder="Email của bạn" />
+                                                    <input class="newsletter-submit" type="submit" value="Gửi" />
+                                                </form>
                                             </div>
                                         </div>
 
                                         <div class="store">
-                                            <a href="#">
+                                            <a >
                                                 <img title="store" src="/images-user//1903/pay2.png" alt="store" />
                                             </a>
 
-                                            <a href="#">
+                                            <a >
                                                 <img title="store" src="/images-user//1903/pay3.png" alt="store" />
                                             </a>
                                         </div>

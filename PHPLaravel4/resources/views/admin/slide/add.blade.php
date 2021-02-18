@@ -44,7 +44,7 @@
                                                                             class="text-danger">*</span> Tên: </label>
                                                                     <div class="col-xl-9 col-lg-9">
                                                                         <input type="text" name="Ten" class="form-control m-input name-field"
-                                                                               placeholder="Điền tên Slide" />
+                                                                               placeholder="Điền tên Slide" value="{{ old('Ten') }}"/>
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group m-form__group row">
@@ -68,13 +68,12 @@
                                                                             class="text-danger">*</span> Link: </label>
                                                                     <div class="col-xl-9 col-lg-9">
                                                                         <input type="text" name="Link" class="form-control m-input name-field"
-                                                                               placeholder="Điền Link" />
+                                                                               placeholder="Điền Link" value="{{ old('Link') }}"/>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-12 d-flex justify-content-end">
                                                                     <div class="m-form__actions">
                                                                         <a href="{{route('show.slide')}}"><button type="button" class="btn btn-danger">Hủy</button></a>
-                                                                        <button type="reset" class="btn btn-focus">Làm mới</button>
                                                                         <button type="submit" class="btn btn-success">Thêm mới</button>
                                                                     </div>
                                                                 </div>

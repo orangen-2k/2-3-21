@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 // admin va user
-Route::get('','PassportController@admin')->name('admin')->middleware('checklogin');
+Route::get('admin','PassportController@admin')->name('admin')->middleware('checklogin');
 Route::get('admin/home','PassportController@admin')->name('admin.home')->middleware('checklogin');
 
 Route::get('login','PassportController@getlogin')->name('login');
@@ -17,6 +17,7 @@ Route::get('update-forgot','PassportController@getupdateforgot')->name('update.f
 Route::post('update-forgot','PassportController@postupdateforgot')->name('update.forgot');
 Route::get('register','PassportController@getregister')->name('register');
 Route::post('register','PassportController@postregister')->name('register');
+Route::post('add.email.new','PassportController@postemailnew')->name('add.email.new');
 
 Route::group(['prefix'=>'admin','middleware'=>'checklogin'],function (){
 
@@ -100,8 +101,9 @@ Route::group(['prefix'=>'admin','middleware'=>'checklogin'],function (){
 
 });
 
-Route::get('user','ShowwebsiteController@gethome')->name('home');
+Route::get('','ShowwebsiteController@gethome')->name('home');
 Route::get('user/home','ShowwebsiteController@gethome')->name('show.home');
+Route::get('timkiem','ShowwebsiteController@gettimkiem')->name('timkiem.home');
 Route::post('timkiem','ShowwebsiteController@gettimkiem')->name('timkiem.home');
 
 Route::get('detail/home/{id}/{tinkhongdau}.html','ShowwebsiteController@getdetail')->name('detail.home');

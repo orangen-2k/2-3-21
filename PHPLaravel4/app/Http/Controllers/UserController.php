@@ -9,15 +9,15 @@ class UserController extends Controller
 {
     //
     public function getshow(Request $request){
-        if($request->keyword){
+        if($request->ten){
             $user = User::where(
-                'name', 'like', "%".$request->keyword."%"
+                'name', 'like', "%".$request->ten."%"
             )->paginate(10);
-            $user->withPath('?keyword=' . $request->keyword);
+            $user->withPath('?ten=' . $request->ten);
         }else{
             $user = User::orderBy('id','desc')->paginate(10);
         }
-        return view('admin.user.show', ['User' => $user,'keyword' => $request->keyword]);
+        return view('admin.user.show', ['User' => $user,'keyword' => $request->ten]);
     }
 
     public function getadd(){

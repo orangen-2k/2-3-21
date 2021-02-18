@@ -75,8 +75,6 @@
                                             <a href="{{route('show.type_of_news')}}"><button
                                                     type="button"
                                                     class="btn btn-danger">Hủy</button></a>
-                                            <button type="reset" class="btn btn-focus">Làm
-                                                mới</button>
                                             <button type="submit" class="btn btn-success">Sửa
                                                 lại</button>
                                         </div>

@@ -12,7 +12,7 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" name="keyword" placeholder="Nhập từ bạn muốn tìm..." value="{{$keyword}}" />
+                                            <input type="text" class="form-control" name="ten" placeholder="Nhập tên bạn muốn tìm..." value="{{$keyword}}" />
                                         </div>
                                     </div>
                                 </div>
@@ -33,11 +33,11 @@
                                 </a><br/><br/>
                                 <tr align="center">
                                     <th>#</th>
-                                    <th>Avarta</th>
+                                    <th>Ảnh</th>
                                     <th>Tên</th>
                                     <th>Email</th>
                                     <th>Số điện thoại</th>
-                                    <th>Level</th>
+                                    <th>Quyền</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>

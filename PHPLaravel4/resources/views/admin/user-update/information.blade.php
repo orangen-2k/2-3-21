@@ -2,6 +2,7 @@
 @section('title', "Thay đổi thông tin")
 <link rel="stylesheet" href="{{ asset('css/change_avatar/change_avatar.css')}}">
 @section('content')
+    <form method="POST" action="{{route('user.update.information')}}" enctype="multipart/form-data">
     <div class="m-content">
         <div class="row" style="height: 550px">
             <div class="col-xl-3 col-lg-4">
@@ -9,7 +10,6 @@
                     <div class="m-portlet__body">
                         <div class="m-card-profile">
                             <div class="m-card-profile__pic">
-                                <form action="{{route('user.update.image')}}" method="POST" enctype="multipart/form-data">
                                     <input type="hidden" name="_token" value="{{csrf_token()}}" />
                                     <div class="image-input image-input-outline image-input-circle" id="kt_image_3">
                                         <div class="image-input-wrapper"
@@ -24,8 +24,6 @@
                                             <input type="hidden" name="profile_avatar_remove">
                                         </label>
                                     </div>
-                                    <button type="submit"></button>
-                                </form>
                             </div><br/>
                             @if(session('image'))
                                 <div class="alert alert-success">
@@ -65,8 +63,6 @@
                     </div>
                     <div class="tab-content">
                         <div class="tab-pane active" id="m_user_profile_tab_1">
-                            <form class="m-form m-form--fit m-form--label-align-right" method="POST"
-                                  action="{{route('user.update.information')}}" enctype="multipart/form-data">
                                 @csrf
                                 <div class="m-portlet__body">
                                     <div class="form-group m-form__group m--margin-top-10 m--hide">
@@ -122,19 +118,19 @@
                                             </div>
                                             <div class="col-7">
                                                 <button type="submit" class="btn btn-success m-btn m-btn--air m-btn--custom">Sửa</button>&nbsp;&nbsp;
-                                                <a href="/"><button type="button" class="btn btn-danger">Hủy</button></a>
+                                                <a href="{{ url('admin') }}"><button type="button" class="btn btn-danger">Hủy</button></a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 @endauth
-                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    </form>
 @endsection
 @section('script')
     <script src="{{ asset('css/change_avatar/scripts.bundle.js')}}"></script>

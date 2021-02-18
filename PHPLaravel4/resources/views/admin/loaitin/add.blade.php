@@ -40,7 +40,7 @@
                                                                     class="text-danger">*</span> Tên loại tin: </label>
                                                             <div class="col-xl-9 col-lg-9">
                                                                 <input type="text" name="NameLT" class="form-control m-input name-field"
-                                                                       placeholder="Điền tên loại tin" />
+                                                                       placeholder="Điền tên loại tin" value="{{ old('NameLT') }}"/>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -66,7 +66,6 @@
                                             <div class="col-md-12 d-flex justify-content-end">
                                                 <div class="m-form__actions">
                                                     <a href="{{route('show.type_of_news')}}"><button type="button" class="btn btn-danger">Hủy</button></a>
-                                                    <button type="reset" class="btn btn-focus">Làm mới</button>
                                                     <button type="submit" class="btn btn-success">Thêm mới</button>
                                                 </div>
                                             </div>

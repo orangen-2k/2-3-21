@@ -13,15 +13,15 @@ class TintucController extends Controller
 {
     //
     public function getshow(Request $request){
-        if($request->keyword){
+        if($request->tieude){
             $news = Tintuc::where(
-                'tieude', 'like', "%".$request->keyword."%"
+                'tieude', 'like', "%".$request->tieude."%"
             )->paginate(10);
-            $news->withPath('?keyword=' . $request->keyword);
+            $news->withPath('?tieude=' . $request->tieude);
         }else{
             $news = Tintuc::orderBy('id','desc')->paginate(10);
         }
-        return view('admin.tintuc.show', ['News' => $news,'keyword' => $request->keyword]);
+        return view('admin.tintuc.show', ['News' => $news,'keyword' => $request->tieude]);
     }
 
     public function getadd(){

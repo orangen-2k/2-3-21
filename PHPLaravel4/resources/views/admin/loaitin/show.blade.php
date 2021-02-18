@@ -12,7 +12,7 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" name="keyword" placeholder="Nhập từ bạn muốn tìm..." value="{{$keyword}}" />
+                                            <input type="text" class="form-control" name="tenloaitin" placeholder="Nhập tên loại tin bạn muốn tìm..." value="{{$keyword}}" />
                                         </div>
                                     </div>
                                 </div>
@@ -32,8 +32,8 @@
                                 </a><br/><br/>
                                 <tr align="center">
                                     <th>#</th>
+                                    <th>Tên loại tin</th>
                                     <th>Thể loại</th>
-                                    <th>Tên</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
@@ -59,8 +59,8 @@
                                 @foreach ($Type_of_news as $item)
                                     <tr>
                                         <td scope="row">{{$i++}}</td>
-                                        <td>{{$item->theloai->ten}}</td>
                                         <td>{{$item->ten}}</td>
+                                        <td>{{$item->theloai->ten}}</td>
                                         <td>
                                             {{--                                            <a target="_blank" href="sua/{{$item->id}}" class="btn btn-outline-dark m-btn m-btn--icon m-btn--icon-only m-btn--pill m-btn--air">--}}
                                             <a href="{{route('update.type_of_news',['id'=>$item])}}" class="btn btn-outline-dark m-btn m-btn--icon m-btn--icon-only m-btn--pill m-btn--air" data-toggle="m-tooltip"  data-original-title="Sửa">

@@ -29,6 +29,20 @@ class UserUpdateController extends Controller
             ]
         );
         $user = Auth::user();
+        if ($request->hasFile('Hinhanh')){
+            $file = $request->file('Hinhanh');
+            $duoi = $file->getClientOriginalExtension();
+            if ($duoi != 'jpg' && $duoi != 'jpg' && $duoi != 'png' && $duoi != 'jpeg'){
+                return redirect()->route('add.slide')->with('Error','Thêm  hình ảnh thất bại');
+            }
+            $name = $file->getClientOriginalName();
+            $hinhanh = quickRandom(5)."_".$name;
+            while (file_exists("image".$hinhanh)){
+                $hinhanh = quickRandom(5)."_".$name;
+            }
+            $file->move("image",$hinhanh);
+            $user->avatar = $hinhanh;
+        }
         $user->username = $request->Hotendem;
         $user->name = $request->Ten;
         $user->save();
@@ -62,20 +76,6 @@ class UserUpdateController extends Controller
                 ->with("error","Mật khẩu cũ không chính xác! Vui lòng kiểm tra lại.");
         }
         $user = Auth::user();
-        $user->password = bcrypt($request->Passwordnew);
-        $user->save();
-        return redirect()->route('user.update.password')->with('Notification','Thay đổi mật khẩu thành công');
-    }
-
-
-    public function getimage()
-    {
-        $auth = Auth::user();
-        return view('admin.user-update.information');
-    }
-
-    public function postimage(Request $request)
-    {
         $user = Auth::user();
         if ($request->hasFile('Hinhanh')){
             $file = $request->file('Hinhanh');
@@ -90,10 +90,9 @@ class UserUpdateController extends Controller
             }
             $file->move("image",$hinhanh);
             $user->avatar = $hinhanh;
-        }else{
-            $user->avatar = "nen.jpg";
         }
+        $user->password = bcrypt($request->Passwordnew);
         $user->save();
-        return redirect()->route('user.update.information')->with('image','Thay đổi ảnh thành công');
+        return redirect()->route('user.update.password')->with('Notification','Thay đổi mật khẩu thành công');
     }
 }
