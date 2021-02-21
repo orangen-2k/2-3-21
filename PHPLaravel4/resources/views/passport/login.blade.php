@@ -41,13 +41,7 @@
                             <input class="form-control m-input m-login__form-input--last" type="password" placeholder="Mật khẩu" name="password">
                         </div>
                         <div class="row m-login__form-sub">
-                            <div class="col-md-5">
-                                <label class="m-checkbox  m-checkbox--focus">
-                                    <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Lưu tài khoản
-                                    <span></span>
-                                </label>
-                            </div>
-                            <div class="col-md-3">
+                            <div class="col-md-8">
                                 <a href="{{url('register')}}">Đăng ký</a>
                             </div>
                             <div class="col-md-4">

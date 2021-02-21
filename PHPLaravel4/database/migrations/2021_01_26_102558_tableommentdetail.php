@@ -13,14 +13,16 @@ class Tableommentdetail extends Migration
      */
     public function up()
     {
-//        Schema::create('commentdetail', function (Blueprint $table) {
-//            $table->increments('id');
-//            $table->integer('iduser');
-//            $table->integer('idcomment');
-//            $table->string('noidung');
-//            $table->integer('comment_id')->unsigned();
-//            $table->timestamps();
-//        });
+        Schema::create('commentdetail', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('iduser');
+            $table->integer('idcomment');
+            $table->string('noidung');
+            $table->string('luotthich');
+            $table->integer('comment_id')->unsigned();
+            $table->foreign('comment_id')->references('id')->on('comment');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -30,6 +32,6 @@ class Tableommentdetail extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('comment');
+        Schema::dropIfExists('commentdetail');
     }
 }

@@ -21,6 +21,7 @@
         @include('user.layout.footer')
 
         @include('user.layout-sp.js-user')
+            @yield('script')
     </body>
 
 </html>

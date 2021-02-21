@@ -11,12 +11,16 @@ Route::post('login','PassportController@postlogin')->name('login');
 Route::get('logout','PassportController@logout')->name('logout');
 Route::get('forgot','PassportController@getforgot')->name('forgot');
 Route::post('forgot','PassportController@postforgot')->name('forgot');
+
 Route::get('check-forgot','PassportController@getcheckforgot')->name('check.forgot');
 Route::post('check-forgot','PassportController@postcheckforgot')->name('check.forgot');
+
 Route::get('update-forgot','PassportController@getupdateforgot')->name('update.forgot');
 Route::post('update-forgot','PassportController@postupdateforgot')->name('update.forgot');
+
 Route::get('register','PassportController@getregister')->name('register');
 Route::post('register','PassportController@postregister')->name('register');
+
 Route::post('add.email.new','PassportController@postemailnew')->name('add.email.new');
 
 Route::group(['prefix'=>'admin','middleware'=>'checklogin'],function (){
@@ -77,6 +81,15 @@ Route::group(['prefix'=>'admin','middleware'=>'checklogin'],function (){
         Route::get('delete/{id}','SlideController@getdelete')->name('delete.slide');
     });
 
+    Route::group(['prefix'=>'dangky'],function (){
+        Route::get('show','UserUpdateController@showxacnhandangky')->name('show.dangky');
+
+        Route::get('update/{id}','UserUpdateController@getxacnhandangky')->name('update.dangky');
+        Route::post('update/{id}','UserUpdateController@postxacnhandangky')->name('update.dangky');
+
+        Route::get('delete/{id}','UserUpdateController@deletexacnhandangky')->name('delete.dangky');
+    });
+
     Route::group(['prefix'=>'user'],function (){
         Route::get('show','UserController@getshow')->name('show.user');
 
@@ -109,14 +122,20 @@ Route::post('timkiem','ShowwebsiteController@gettimkiem')->name('timkiem.home');
 Route::get('detail/home/{id}/{tinkhongdau}.html','ShowwebsiteController@getdetail')->name('detail.home');
 
 Route::post('comment/home/{id}','CommentController@postcomment')->name('comment.home');
-Route::get('userhome/home','UserhomeController@getuserhome')->name('user.home');
-Route::post('userhome/home','UserhomeController@postuserhome')->name('user.home');
+Route::get('userhome/home','UserhomeController@getuserhome')->name('user.home')->middleware('checklogin');
+Route::post('userhome/home','UserhomeController@postuserhome')->name('user.home')->middleware('checklogin');
 
 Route::get('loaitin/home/{id}/{tenkhongdau}.html','ShowwebsiteController@getloaitin')->name('loaitin.home');
+Route::get('tinmoi/home','ShowwebsiteController@gettinmoi')->name('tinmoi.home');
+Route::get('tinnong/home','ShowwebsiteController@gettinnong')->name('tinnong.home');
+Route::get('dondangky/home','TaodonController@getdondangky')->name('dondangky.home')->middleware('checklogin');
+Route::post('dondangky/home','TaodonController@postdondangky')->name('dondangky.home')->middleware('checklogin');
+Route::get('xacnhandon/home','TaodonController@getxacnhandon')->name('xacnhandon.home')->middleware('checklogin');
+Route::post('xacnhandon/home','TaodonController@postxacnhandon')->name('xacnhandon.home')->middleware('checklogin');
 
-Route::get('update-password/home/{id}','UserhomeController@getchangepassport')->name('change.passport');
-Route::post('update-password/home/{id}','UserhomeController@postchangepassport')->name('change.passport');
-Route::get('update-information/home/{id}','UserhomeController@getchangeinfomation')->name('change.information');
-Route::post('update-information/home/{id}','UserhomeController@postchangeinfomation')->name('change.information');
+Route::get('update-password/home/{id}','UserhomeController@getchangepassport')->name('change.passport')->middleware('checklogin');
+Route::post('update-password/home/{id}','UserhomeController@postchangepassport')->name('change.passport')->middleware('checklogin');
+Route::get('update-information/home/{id}','UserhomeController@getchangeinfomation')->name('change.information')->middleware('checklogin');
+Route::post('update-information/home/{id}','UserhomeController@postchangeinfomation')->name('change.information')->middleware('checklogin');
 
 ?>

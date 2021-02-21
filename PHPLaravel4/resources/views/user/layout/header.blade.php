@@ -155,7 +155,7 @@
                                         </li>
 
                                         <li class="res-dropdown menu-shop">
-                                            <a class="item-link " href="#">Tin mới nhất</a>
+                                            <a class="item-link " href="{{route('tinmoi.home')}}">Tin mới nhất</a>
 
                                         </li>
 
@@ -230,7 +230,7 @@
                                 </li>
 
                                 <li class="dropdown menu-shop etrostore-mega-menu level1 etrostore-menu-img">
-                                    <a href="#" class="item-link ">
+                                    <a  href="{{route('tinmoi.home')}}" class="item-link ">
                                             <span class="have-title">
 													<span class="menu-color" data-color="#f03442"></span>
 
@@ -246,11 +246,22 @@
                                 </li>
 
                                 <li class="dropdown menu-smartphones-tablet etrostore-mega-menu level1">
-                                    <a href="#" class="item-link">
+                                    <a href="{{route('dondangky.home')}}" class="item-link">
                                             <span class="have-title">
 													<span class="menu-color" data-color="#13528c"></span>
+                                            <span class="menu-title">Đăng ký nhập học</span>
+                                            </span>
+                                    </a>
+                                </li>
 
-                                            <span class="menu-title">Tin quan tâm</span>
+                                <li class="menu-deals etrostore-menu-custom level1 etrostore-menu-img">
+                                    <a  href="{{route('tinnong.home')}}" class="item-link">
+                                            <span class="have-title">
+													<span class="menu-img">
+														<img src="/images-user/1903/icon-hot.png" alt="Menu Image" />
+													</span>
+
+                                            <span class="menu-title">Tin nóng</span>
                                             </span>
                                     </a>
                                 </li>
@@ -262,18 +273,6 @@
                                             </span>
                                     </a>
 
-                                </li>
-
-                                <li class="menu-deals etrostore-menu-custom level1 etrostore-menu-img">
-                                    <a href="deals.html" class="item-link">
-                                            <span class="have-title">
-													<span class="menu-img">
-														<img src="/images-user/1903/icon-hot.png" alt="Menu Image" />
-													</span>
-
-                                            <span class="menu-title">Tin nóng</span>
-                                            </span>
-                                    </a>
                                 </li>
                                 <li class="menu-about-us etrostore-menu-custom level1">
                                     <a href="about_us.html" class="item-link">

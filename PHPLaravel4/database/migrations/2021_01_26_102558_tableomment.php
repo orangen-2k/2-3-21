@@ -18,6 +18,7 @@ class Tableomment extends Migration
             $table->integer('iduser');
             $table->integer('idtintuc');
             $table->string('noidung');
+            $table->string('luotthich');
             $table->integer('tintuc_id')->unsigned();
             $table->foreign('tintuc_id')->references('id')->on('tintuc');
             $table->timestamps();

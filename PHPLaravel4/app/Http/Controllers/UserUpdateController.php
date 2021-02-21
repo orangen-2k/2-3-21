@@ -2,10 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Dondangky;
+use App\Mail\SendMailable;
+use App\Mail\SendMailNhanDon;
+use App\Mail\SendMailXoaDon;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Session;
 
 class UserUpdateController extends Controller
 {
@@ -94,5 +100,62 @@ class UserUpdateController extends Controller
         $user->password = bcrypt($request->Passwordnew);
         $user->save();
         return redirect()->route('user.update.password')->with('Notification','Thay đổi mật khẩu thành công');
+    }
+
+    public function showxacnhandangky(Request $request){
+        if($request->tenemail){
+            $dondangky = Dondangky::where(
+                'email', 'like', "%".$request->tenemail."%"
+            )->paginate(10);
+            $dondangky->withPath('?tenemail=' . $request->tenemail);
+        }else{
+            $dondangky = Dondangky::orderBy('id','desc')->paginate(10);
+        }
+        return view('admin.user-update.checkdondangky', ['Dondangky' => $dondangky,'keyword' => $request->tenemail]);
+    }
+
+    public function getxacnhandangky($id)
+    {
+        $dondangky = Dondangky::find($id);
+        return view('admin.user-update.updatedondangky', ['Dondangky'=>$dondangky]);
+    }
+
+    public function postxacnhandangky(Request $request, $id)
+    {
+        $dondangky = Dondangky::find($id);
+        Session::put('Iddangky', $id);
+        $dondangky->trangthai = 1 ;
+        $dondangky->save();
+        $useridcheck = User::find($dondangky['iduser']);
+        Mail::to($useridcheck['email'])->send(new SendMailNhanDon());
+        if($request->tenemail){
+            $dondangky = Dondangky::where(
+                'email', 'like', "%".$request->tenemail."%"
+            )->paginate(10);
+            $dondangky->withPath('?tenemail=' . $request->tenemail);
+        }else{
+            $dondangky = Dondangky::orderBy('id','desc')->paginate(10);
+        }
+        $email = $useridcheck['email'];
+        return redirect()->route('show.dangky', ['Dondangky' => $dondangky,'keyword' => $request->tenemail])
+            ->with('Notification','Đã gửi thông tin đến Mail '."[ $email ]");
+    }
+
+    public function deletexacnhandangky(Request $request, $id)
+    {
+        $dondangky = Dondangky::find($id);
+        $useridcheck = User::find($dondangky['iduser']);
+        Mail::to($useridcheck['email'])->send(new SendMailXoaDon());
+        $dondangky->delete();
+        if($request->tenemail){
+            $dondangky = Dondangky::where(
+                'email', 'like', "%".$request->tenemail."%"
+            )->paginate(10);
+            $dondangky->withPath('?tenemail=' . $request->tenemail);
+        }else{
+            $dondangky = Dondangky::orderBy('id','desc')->paginate(10);
+        }
+        return redirect()->route('show.dangky', ['Dondangky' => $dondangky,'keyword' => $request->tenemail])
+            ->with('Notification','Đã hủy đơn thành công');
     }
 }

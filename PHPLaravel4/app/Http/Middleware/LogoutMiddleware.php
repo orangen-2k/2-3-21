@@ -16,20 +16,14 @@ class LogoutMiddleware
      */
     public function handle($request, Closure $next)
     {
-//        if (Auth::check()){
-//            $user = Auth::user();
-//            if ($user->level == 1)
-//                return redirect()->route('admin');
-//            else
-//                return redirect()->route('user');
-//        }   else {
-//                return $next($request);
-//        }
-
-//        if (Auth::check()){
-//                return redirect()->route('user');
-//        }   else {
-//                return $next($request);
-//        }
+        if (Auth::check()){
+            $user = Auth::user();
+            if ($user->level == 1)
+                return $next($request);
+            else
+                return redirect()->route('home');
+        }   else {
+            return redirect('login');
+        }
     }
 }

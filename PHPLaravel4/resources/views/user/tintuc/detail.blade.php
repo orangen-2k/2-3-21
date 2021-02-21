@@ -69,7 +69,7 @@
                         <li><a href="{{route('user.home')}}">Trang chủ</a><span class="go-page"></span></li>
                         <li class="active"><span>{{$Tintuc->loaitin->theloai->ten}}</span></li>
                         <li><a
-                                href="{{route('loaitin.home',['id'=>$Tintuc->loaitin->theloai->id,'tenkhongdau'=>$Tintuc->loaitin->theloai->tenkhongdau])}}">{{$Tintuc->loaitin->ten}}</a><span
+                                href="{{route('loaitin.home',['id'=>$Tintuc->loaitin->id,'tenkhongdau'=>$Tintuc->loaitin->tenkhongdau])}}">{{$Tintuc->loaitin->ten}}</a><span
                                 class="go-page"></span></li>
                         <li class="active"><span>{{$Tintuc->tieude}}</span></li>
                     </ul>
@@ -146,10 +146,6 @@
                                 <div class="row blog-content blog-content-grid">
                                     <div id="post-01"
                                         class=" clearfix post type-post status-publish format-standard has-post-thumbnail hentry category-blog tag-couples tag-wedding">
-                                        {{--
-                                        <div id="post-01"
-                                            class="col-md-3 col-sm-6 col-xs-12 clearfix post type-post status-publish format-standard has-post-thumbnail hentry category-blog tag-couples tag-wedding">
-                                            --}}
                                             <div class="entry clearfix">
                                                 <div class="entry-thumb">
                                                     <a class="entry-hover"

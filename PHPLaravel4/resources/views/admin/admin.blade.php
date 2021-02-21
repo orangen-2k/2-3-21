@@ -45,7 +45,6 @@
 
 </div>
 
-<!-- @include('admin.layout._share.quick_sidebar') -->
 <div id="m_scroll_top" class="m-scroll-top">
     <i class="fas fa-chevron-up"></i>
 </div>
@@ -54,10 +53,7 @@
 @include('admin.layout._share.script')
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 @yield('script')
-
 @include('admin.layout._share.notify')
-<!-- <script type="text/javascript" src="{{ asset('pjax/jquery.pjax.js') }}"></script> -->
-<!-- <script type="text/javascript" src="{{ asset('pjax/setup-pjax.js') }}"></script> -->
 </body>
 
 </html>

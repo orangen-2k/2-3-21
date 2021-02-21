@@ -41,10 +41,7 @@ class CategoryController extends Controller
         $category->ten = $request->NameTL;
         $category->tenkhongdau = changeTitle($request->NameTL);
         $category->save();
-//        return redirect()->route('add.category')->with('thongbao','Thêm thể loại thành công');
         return redirect()->route('show.category')->with('Notification','Thêm thể loại '."[ $category->ten ]".' thành công');
-//        echo changeTitle($request->Ten);
-//        echo $request->ten;
     }
 
     public function getupdate($id){

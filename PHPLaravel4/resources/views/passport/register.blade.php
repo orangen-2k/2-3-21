@@ -31,10 +31,10 @@
                         @csrf
                         <input type="hidden" name="_token" value="{{csrf_token()}}" />
                         <div class="form-group m-form__group">
-                            <input class="form-control m-input" type="text" placeholder="Họ và tên" name="UserName" >
+                            <input class="form-control m-input" type="text" placeholder="Họ và tên đệm" name="UserName" >
                         </div>
                         <div class="form-group m-form__group">
-                            <input class="form-control m-input" type="text" placeholder="Ten" name="Name" >
+                            <input class="form-control m-input" type="text" placeholder="Tên" name="Name" >
                         </div>
                         <div class="form-group m-form__group">
                             <input class="form-control m-input" type="text" placeholder="Tài khoản Email" name="Email" >
@@ -45,19 +45,9 @@
                         <div class="form-group m-form__group">
                             <input class="form-control m-input m-login__form-input--last" type="password" placeholder="Nhập lại mật khẩu" name="Password-again">
                         </div>
-                        <div class="row m-login__form-sub">
-                            <div class="col-md-9">
-                                <label class="m-checkbox  m-checkbox--focus">
-                                    <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Tôi đông ý với các điều khoản
-                                    <span></span>
-                                </label>
-                            </div>
-                            <div class="col-md-3">
-                                <a href="{{url('login')}}">Đăng nhập</a>
-                            </div>
-                        </div>
                         <div class="m-login__form-action">
-                            <button type="submit" class="btn btn-focus m-btn m-btn--pill m-btn--custom m-btn--air m-login__btn m-login__btn--primary">Đăng ký</button>
+                            <button type="submit" class="btn btn-focus m-btn m-btn--pill m-btn--custom m-btn--air m-login__btn m-login__btn--primary">Đăng ký</button>&nbsp;&nbsp;
+                            <a class="btn btn-outline-focus m-btn m-btn--pill m-btn--custom m-login__btn" href="login" >Hủy</a>
                         </div>
                     </form>
                 </div>

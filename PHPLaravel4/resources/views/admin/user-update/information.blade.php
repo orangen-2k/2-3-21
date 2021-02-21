@@ -3,13 +3,13 @@
 <link rel="stylesheet" href="{{ asset('css/change_avatar/change_avatar.css')}}">
 @section('content')
     <form method="POST" action="{{route('user.update.information')}}" enctype="multipart/form-data">
-    <div class="m-content">
-        <div class="row" style="height: 550px">
-            <div class="col-xl-3 col-lg-4">
-                <div class="m-portlet m-portlet--full-height  ">
-                    <div class="m-portlet__body">
-                        <div class="m-card-profile">
-                            <div class="m-card-profile__pic">
+        <div class="m-content">
+            <div class="row" style="height: 550px">
+                <div class="col-xl-3 col-lg-4">
+                    <div class="m-portlet m-portlet--full-height  ">
+                        <div class="m-portlet__body">
+                            <div class="m-card-profile">
+                                <div class="m-card-profile__pic">
                                     <input type="hidden" name="_token" value="{{csrf_token()}}" />
                                     <div class="image-input image-input-outline image-input-circle" id="kt_image_3">
                                         <div class="image-input-wrapper"
@@ -24,45 +24,45 @@
                                             <input type="hidden" name="profile_avatar_remove">
                                         </label>
                                     </div>
-                            </div><br/>
-                            @if(session('image'))
-                                <div class="alert alert-success">
-                                    {{session('image')}}
+                                </div><br/>
+                                @if(session('image'))
+                                    <div class="alert alert-success">
+                                        {{session('image')}}
+                                    </div>
+                                @endif
+                                <div class="m-card-profile__details">
+                                    <span class="m-card-profile__name">@auth {{Auth::user()->name }} @endauth</span>
+                                    <a href="" class="m-card-profile__email m-link">@auth {{Auth::user()->email }} @endauth</a>
                                 </div>
-                            @endif
-                            <div class="m-card-profile__details">
-                                <span class="m-card-profile__name">@auth {{Auth::user()->name }} @endauth</span>
-                                <a href="" class="m-card-profile__email m-link">@auth {{Auth::user()->email }} @endauth</a>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-xl-9 col-lg-8">
-                <div class="m-portlet m-portlet--full-height m-portlet--tabs  ">
-                    <div class="m-portlet__head">
-                        <div class="m-portlet__head-tools">
-                            <ul class="nav nav-tabs m-tabs m-tabs-line   m-tabs-line--left m-tabs-line--primary"
-                                role="tablist">
-                                <li class="nav-item m-tabs__item">
-                                    <a class="nav-link m-tabs__link active" href="{{route('user.update.information')}}"
-                                       role="tab">
-                                        <i class="flaticon-share m--hide"></i>
-                                        Cập nhật tài khoản
-                                    </a>
-                                </li>
-                                <li class="nav-item m-tabs__item">
-                                    <a class="nav-link m-tabs__link " href="{{route('user.update.password')}}"
-                                       role="tab">
-                                        <i class="flaticon-share m--hide"></i>
-                                        Cập nhật mật khẩu
-                                    </a>
-                                </li>
-                            </ul>
+                <div class="col-xl-9 col-lg-8">
+                    <div class="m-portlet m-portlet--full-height m-portlet--tabs  ">
+                        <div class="m-portlet__head">
+                            <div class="m-portlet__head-tools">
+                                <ul class="nav nav-tabs m-tabs m-tabs-line   m-tabs-line--left m-tabs-line--primary"
+                                    role="tablist">
+                                    <li class="nav-item m-tabs__item">
+                                        <a class="nav-link m-tabs__link active" href="{{route('user.update.information')}}"
+                                           role="tab">
+                                            <i class="flaticon-share m--hide"></i>
+                                            Cập nhật tài khoản
+                                        </a>
+                                    </li>
+                                    <li class="nav-item m-tabs__item">
+                                        <a class="nav-link m-tabs__link " href="{{route('user.update.password')}}"
+                                           role="tab">
+                                            <i class="flaticon-share m--hide"></i>
+                                            Cập nhật mật khẩu
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                    <div class="tab-content">
-                        <div class="tab-pane active" id="m_user_profile_tab_1">
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="m_user_profile_tab_1">
                                 @csrf
                                 <div class="m-portlet__body">
                                     <div class="form-group m-form__group m--margin-top-10 m--hide">
@@ -124,12 +124,12 @@
                                     </div>
                                 </div>
                                 @endauth
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     </form>
 @endsection
 @section('script')
